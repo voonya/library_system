@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="Client_class.cpp" />
     <ClCompile Include="library_system.cpp" />
+    <ClCompile Include="NewClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client_header.h" />
+    <ClInclude Include="NewClient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
