@@ -1,3 +1,4 @@
+#pragma once
 #include "Client_header.h"
 
 class NewClient
@@ -17,7 +18,8 @@ public:
 	vector<string> get_reservation_list() { return client.reservation; }
 	//void add_book_reservation(string book) { client.reservation.push_back(book); }
 	//void add_book_debts(string book) { client.debts.push_back(book); }*/
-	string add_new_client(vector<Client> DB);
+	void add_new_client(vector<Client>& DB);
+	Client get_client() { return client; }
 };
 
 string get_main_info(Client c);

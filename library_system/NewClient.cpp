@@ -13,10 +13,10 @@ string get_main_info(Client c) {
 }
 
 
-string NewClient::add_new_client(vector<Client> DB) {
+void NewClient::add_new_client(vector<Client>& DB) {
 	bool flag = false;
 	for (int i = 0; i < DB.size(); i++) {
-		if (DB[i].name == client.name && DB[i].surname == client.surname) {
+		if (DB[i].name == client.name && DB[i].surname == client.surname && DB[i].phone_number == client.phone_number) {
 			flag = true;
 			cout << " Database already has a client with theese name and surname:\n";
 			cout << get_main_info(DB[i]) << get_more_info(DB[i]);
@@ -28,7 +28,9 @@ string NewClient::add_new_client(vector<Client> DB) {
 					DB.push_back(client);
 					cout << "Adding new client was done\n";
 				}
-				else if (answer == "n") { cout << "Adding new client was denied\n"; }
+				else if (answer == "n") { 
+					cout << "Adding new client was denied\n";
+				}
 				else { 
 					" Incorrect answer\n Try again: ";
 					getline(cin, answer);
