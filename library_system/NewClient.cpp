@@ -1,16 +1,7 @@
 #include "NewClient.h"
 #include <iostream>
 
-string get_more_info(Client c) {
-	string info = " Phonenumber: " + c.phone_number + "\n Address: " + c.address + "\n";
-	return info;
-}
 
-string get_main_info(Client c) {
-	string info = " Surname: " + c.surname + "\n Name: " + c.name;
-	string date = "\n Date of birth: " + c.date_of_birth.get_date();
-	return info + date;
-}
 
 
 void NewClient::add_new_client(vector<Client>& DB) {

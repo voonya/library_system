@@ -140,13 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client_class.cpp" />
+    <ClCompile Include="Edit_Profile.cpp" />
     <ClCompile Include="Interface_NewClient.cpp" />
     <ClCompile Include="library_system.cpp" />
+    <ClCompile Include="Menu_Edit_Profile.cpp" />
     <ClCompile Include="NewClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client_header.h" />
+    <ClInclude Include="Edit_Profile.h" />
     <ClInclude Include="Interface_NewClient.h" />
+    <ClInclude Include="Menu_Edit_Profile.h" />
     <ClInclude Include="NewClient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

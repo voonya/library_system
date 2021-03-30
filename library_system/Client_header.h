@@ -23,6 +23,7 @@ class Client {
 	string address;
 	vector<string> debts;
 	vector<string> reservation;
+	vector<string> history;
 public:
 	/*
 	void set_date_birth(int d, int m, int y) {
@@ -41,6 +42,10 @@ public:
 	string get_main_info();
 	string get_more_info();*/
 	friend class NewClient;
+	friend class Edit_Profile;
 	friend string get_main_info(Client c);
 	friend string get_more_info(Client c);
+	friend string get_debts_info(Client c);
+	friend string get_reservation_info(Client c);
+	friend string get_history_info(Client c);
 };
