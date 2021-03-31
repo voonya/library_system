@@ -3,18 +3,9 @@
 #include <vector>
 #include <queue>
 #include "Client_header.h"
-#include "Booking.h"
+#include "Book.h"
 
 using namespace std;
-
-struct Book{
-	int id;
-	string title;
-	string author;
-	int pages;
-	string additionalInfo;
-	queue< Booking > bookingQueue;
-};
 
 class BookDatabase {
 	vector< Book > books;

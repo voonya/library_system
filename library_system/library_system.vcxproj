@@ -139,16 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BookDatabase.cpp" />
     <ClCompile Include="Client_class.cpp" />
     <ClCompile Include="Edit_Profile.cpp" />
     <ClCompile Include="Interface_NewClient.cpp" />
     <ClCompile Include="library_system.cpp" />
     <ClCompile Include="Menu_Edit_Profile.cpp" />
     <ClCompile Include="NewClient.cpp" />
+    <ClCompile Include="Book.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client_header.h" />
     <ClInclude Include="Edit_Profile.h" />
+    <ClInclude Include="BookDatabase.h" />
+    <ClInclude Include="Booking.h" />
+    <ClInclude Include="Book.h" />
     <ClInclude Include="Interface_NewClient.h" />
     <ClInclude Include="Menu_Edit_Profile.h" />
     <ClInclude Include="NewClient.h" />
