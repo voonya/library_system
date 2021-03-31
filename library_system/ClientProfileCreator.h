@@ -1,7 +1,7 @@
 #pragma once
 #include "Client_header.h"
 
-class NewClient
+class ClientProfileCreator
 {
 	Client client;
 public:

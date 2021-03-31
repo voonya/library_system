@@ -1,7 +1,7 @@
 #pragma once
-#include "Edit_Profile.h"
+#include "ClientProfileEditor.h"
 
-class Menu_Edit_Profile: public Edit_Profile
+class ClientProfileInterface : public ClientProfileEditor
 {
 
 public:

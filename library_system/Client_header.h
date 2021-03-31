@@ -13,7 +13,7 @@ public:
 	Date(int d, int m, int y) : day(d), month(m), year(y) {};
 	string get_date();
 	friend class Client;
-	friend class NewClient;
+	friend class ClientProfileCreator;
 };
 
 class Client {
@@ -27,8 +27,8 @@ class Client {
 	vector<string> history;
 public:
 	Client() { date_of_birth = Date(1, 1, 2000); }
-	friend class NewClient;
-	friend class Edit_Profile;
+	friend class ClientProfileCreator;
+	friend class ClientProfileEditor;
 	friend string get_main_info(Client c);
 	friend string get_more_info(Client c);
 	friend string get_debts_info(Client c);

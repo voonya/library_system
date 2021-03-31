@@ -1,9 +1,8 @@
 #pragma once
 #include "ClientProfileCreator.h"
-class Interface_NewClient
+class ClientRegestrationInterface
 {
-	NewClient client;
-	//vector<Client> DB;
+	ClientProfileCreator client;
 public:
 	void work_loop(string& answer, vector<Client>& DB);
 	void start_menu(vector<Client>& DB);

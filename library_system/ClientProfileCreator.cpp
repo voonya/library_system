@@ -1,6 +1,6 @@
 #include "ClientProfileCreator.h"
 #include <iostream>
-void NewClient::add_new_client(vector<Client>& DB) {
+void ClientProfileCreator::add_new_client(vector<Client>& DB) {
 	bool flag = false;
 	for (int i = 0; i < DB.size(); i++) {
 		if (DB[i].name == client.name && DB[i].surname == client.surname && DB[i].phone_number == client.phone_number) {
@@ -14,11 +14,11 @@ void NewClient::add_new_client(vector<Client>& DB) {
 			if (answer == "y") {
 				DB.push_back(client);
 				cout << "\n Adding new client was done\n";
-				cout << "--------------------------------------------------------------------------\n";
+				cout << "\n------------------------------------------------------------------------------\n";
 			}
 			else if (answer == "n") { 
 				cout << "\n Adding new client was denied\n";
-				cout << "--------------------------------------------------------------------------\n";
+				cout << "------------------------------------------------------------------------------\n";
 			}
 			else { 
 				"\n Incorrect answer\n Try again: ";
@@ -30,6 +30,6 @@ void NewClient::add_new_client(vector<Client>& DB) {
 	if (!flag) {
 		DB.push_back(client);
 		cout << "\n Adding new client was done\n";
-		cout << "--------------------------------------------------------------------------\n";
+		cout << "\n------------------------------------------------------------------------------\n";
 	}
 }

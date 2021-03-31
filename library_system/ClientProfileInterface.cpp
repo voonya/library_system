@@ -1,7 +1,7 @@
-#include "Menu_Edit_Profile.h"
+#include "ClientProfileInterface.h"
 
 
-void Menu_Edit_Profile::start_menu(vector<Client>& DB) {
+void ClientProfileInterface::start_menu(vector<Client>& DB) {
 	cout << " It`s menu of changing profile of clients\n";
 	cout << " If you want to start enter 's'\n If you want to quit enter 'q'\n";
 	string answer;
@@ -36,7 +36,7 @@ void Menu_Edit_Profile::start_menu(vector<Client>& DB) {
 
 }
 
-void Menu_Edit_Profile::change_menu(vector<Client>& DB) {
+void ClientProfileInterface::change_menu(vector<Client>& DB) {
 	string answer = "";
 	while(answer!="q"){
 		cout << " What you want to change: (1) name, (2) surname, (3) phonenumber, (4) date of bith,\n (5) address, (6) debts, (7) reservation or (8) history (or quit)?\n Enter (1/2/3/4/5/6/7/8/q): ";
@@ -83,7 +83,7 @@ void Menu_Edit_Profile::change_menu(vector<Client>& DB) {
 	}
 }
 
-void Menu_Edit_Profile::show_info() {
+void ClientProfileInterface::show_info() {
 	cout << get_main_info(client) << "\n" << get_more_info(client);
 	cout << " Debts:\n"; show_debts();
 	cout << " Reservation:\n"; show_reservation(); //<< get_reservation_info(client);
