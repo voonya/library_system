@@ -4,7 +4,9 @@
 
 void Interface_NewClient::set_info() {
 	string a;
-	cout << " Nice. To create a new clien`s profile you need to input some info about client\n";
+	cout << "--------------------------------------------------------------------------\n";
+	cout << "\n Nice. To create a new client`s profile you need to input some info about client\n";
+	cout << "--------------------------------------------------------------------------\n";
 	cout << " Name: ";
 	getline(cin, a);
 	client.set_name(a);
@@ -32,7 +34,7 @@ void Interface_NewClient::set_info() {
 }
 
 void Interface_NewClient::start_menu(vector<Client>& DB) {
-	cout << " Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n";
+	cout << " Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;
 	getline(cin, answer);
 	work_loop(answer, DB);
@@ -44,13 +46,17 @@ void Interface_NewClient::work_loop(string& answer, vector<Client>& DB) {
 	while (answer != "q") {
 		if (answer == "s") {
 			set_info();
+			cout << "--------------------------------------------------------------------------\n";
 			cout << "\n Finally we got:\n";
 			cout << get_main_info(client.get_client()) << "\n" << get_more_info(client.get_client());
-			cout << " Everything is correct? (y/n): ";
+			cout << "--------------------------------------------------------------------------\n";
+			cout << " \n Everything is correct? (y/n): ";
+			cout << "--------------------------------------------------------------------------\n";
 			getline(cin, answer);
 			if (answer == "y") {
 				client.add_new_client(DB);
-				answer = "q";
+				cout << "\n Do you want to add one more client?\n Enter 's' to go on and 'q' to quit:\n ";
+				getline(cin, answer);
 			}
 			else {
 				cout << " Okey. Lets try again\n";

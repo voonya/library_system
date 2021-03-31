@@ -7,12 +7,12 @@ string Date::get_date() {
 }
 
 string get_more_info(Client c) {
-	string info = " Phonenumber: " + c.phone_number + "\n Address: " + c.address + "\n";
+	string info = " Phonenumber: " + c.phone_number + "\n Address: " + c.address + "\n\n";
 	return info;
 }
 
 string get_main_info(Client c) {
-	string info = " Surname: " + c.surname + "\n Name: " + c.name;
+	string info = " Name: " + c.name + "\n Surname: " + c.surname ;
 	string date = "\n Date of birth: " + c.date_of_birth.get_date();
 	return info + date;
 }

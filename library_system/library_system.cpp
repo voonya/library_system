@@ -6,7 +6,8 @@ vector<Client> DB_Clients;
 
 int main()
 {
-
+	Interface_NewClient menu;
+	menu.start_menu(DB_Clients);
 	return 0;
 }
 
