@@ -16,9 +16,15 @@ void Menu_Edit_Profile::start_menu(vector<Client>& DB) {
 			cout << " Enter phonenumber: ";
 			getline(cin, phonenumber);
 			client = find_client(DB, name, surname, phonenumber, index_in_db);
-			show_info();
-			change_menu(DB);
-			show_info();
+			if (index_in_db != -1) {
+				show_info();
+				change_menu(DB);
+				show_info();
+				answer = "q";
+			}
+			else {
+				cout << " There is no client with theese data in db\n";
+			}
 		}
 		// подряд несколько изменить
 	}
