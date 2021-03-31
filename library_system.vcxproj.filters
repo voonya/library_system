@@ -83,5 +83,11 @@
     <ClInclude Include="library_system\NewClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BookingUserInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BookBooker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

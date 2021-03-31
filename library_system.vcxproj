@@ -111,6 +111,8 @@
     <ClCompile Include="library_system\NewClient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BookingUserInterface.h" />
+    <ClInclude Include="BookBooker.h" />
     <ClInclude Include="library_system\Book.h" />
     <ClInclude Include="library_system\BookCatalogueUI.h" />
     <ClInclude Include="library_system\BookDatabase.h" />
