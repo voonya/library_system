@@ -2,10 +2,12 @@
 
 
 void ClientProfileInterface::start_menu(vector<Client>& DB) {
-	cout << " It`s menu of changing profile of clients\n";
-	cout << " If you want to start enter 's'\n If you want to quit enter 'q'\n";
+	cout << "\n---------------------------------------------------------------------------------\n";
+	cout << "\n It`s menu of changing profile of clients\n";
+	cout << " If you want to start enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;
 	getline(cin, answer);
+	cout << "\n---------------------------------------------------------------------------------\n";
 	while (answer != "q") {
 		if (answer == "s") {
 			string name, surname, phonenumber;
@@ -15,17 +17,21 @@ void ClientProfileInterface::start_menu(vector<Client>& DB) {
 			getline(cin, surname);
 			cout << " Enter phonenumber: ";
 			getline(cin, phonenumber);
-			client = find_client(DB, name, surname, phonenumber, index_in_db);
+			client = find_client(DB, name, surname, phonenumber);
 			if (index_in_db != -1) {
+				cout << "\n---------------------------------------------------------------------------------\n";
 				show_info();
+				cout << "\n---------------------------------------------------------------------------------\n";
 				change_menu(DB);
 				//show_info();
 				answer = "q";
 			}
 			else {
+				cout << "\n---------------------------------------------------------------------------------\n";
 				cout << " There is no client with theese data in db\n";
+				cout << "\n---------------------------------------------------------------------------------\n";
 			}
-			cout << " Do you want to try again or change another client`s profile, enter 'q' if you dont want? (s/q): ";
+			cout << "\n Do you want to try again or change another client`s profile, enter 'q' if you dont want? (s/q): ";
 			getline(cin, answer);
 		}
 		else {
@@ -79,7 +85,9 @@ void ClientProfileInterface::change_menu(vector<Client>& DB) {
 			change_history();
 		}
 		update_info(client, DB, index_in_db);
+		cout << "\n---------------------------------------------------------------------------------\n";
 		show_info();
+		cout << "\n---------------------------------------------------------------------------------\n";
 	}
 }
 

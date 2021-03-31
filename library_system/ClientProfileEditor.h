@@ -6,7 +6,7 @@ class ClientProfileEditor
 public:
 	Client client;
 	int index_in_db;
-	Client find_client(vector<Client> DB, string name, string surname, string phonenumber, int &index_in_db);
+	Client find_client(vector<Client> DB, string name, string surname, string phonenumber);
 	void update_info(Client client, vector<Client>& DB, int index_in_db);
 	void change_name(string name) { client.name = name; }
 	void change_surname(string surname) { client.surname = surname; }

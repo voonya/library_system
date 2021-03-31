@@ -2,12 +2,13 @@
 
 
 
-Client ClientProfileEditor::find_client(vector<Client> DB, string name, string surname, string phonenumber, int& index) {
+Client ClientProfileEditor::find_client(vector<Client> DB, string name, string surname, string phonenumber) {
 	Client client;
+	index_in_db = -1;
 	for (int i = 0; i < DB.size(); i++) {
 		if (DB[i].name == name && DB[i].surname == surname && DB[i].phone_number == phonenumber) {
 			client = DB[i];
-			index = i;
+			index_in_db = i;
 			return client;
 		}
 	}
@@ -67,7 +68,7 @@ void ClientProfileEditor::show_reservation() {
 	}
 }
 void ClientProfileEditor::change_reservation() {
-	cout << "\n You want delete or add? (d/a)";
+	cout << "\n You want delete or add? (d/a): ";
 	string answer; getline(cin, answer);
 	if (answer == "d") {
 		int index;

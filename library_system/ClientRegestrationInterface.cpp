@@ -4,9 +4,9 @@
 
 void ClientRegestrationInterface::set_info() {
 	string a;
-	cout << "------------------------------------------------------------------------------\n";
+	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n Nice. To create a new client`s profile you need to input some info about client\n";
-	cout << "------------------------------------------------------------------------------\n";
+	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << " Name: ";
 	getline(cin, a);
 	client.set_name(a);
@@ -34,7 +34,8 @@ void ClientRegestrationInterface::set_info() {
 }
 
 void ClientRegestrationInterface::start_menu(vector<Client>& DB) {
-	cout << " Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n ";
+	cout << "\n---------------------------------------------------------------------------------\n";
+	cout << "\n Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;
 	getline(cin, answer);
 	work_loop(answer, DB);
@@ -46,13 +47,13 @@ void ClientRegestrationInterface::work_loop(string& answer, vector<Client>& DB) 
 	while (answer != "q") {
 		if (answer == "s") {
 			set_info();
-			cout << "------------------------------------------------------------------------------\n";
+			cout << "\n---------------------------------------------------------------------------------\n";
 			cout << "\n Finally we got:\n";
 			cout << get_main_info(client.get_client()) << "\n" << get_more_info(client.get_client());
-			cout << "------------------------------------------------------------------------------\n";
+			cout << "\n---------------------------------------------------------------------------------\n";
 			cout << " \n Everything is correct? (y/n): ";
 			getline(cin, answer);
-			cout << "\n------------------------------------------------------------------------------\n";
+			cout << "\n---------------------------------------------------------------------------------\n";
 			if (answer == "y") {
 				client.add_new_client(DB);
 				cout << "\n Do you want to add one more client?\n Enter 's' to go on and 'q' to quit:\n ";

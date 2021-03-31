@@ -14,11 +14,11 @@ void ClientProfileCreator::add_new_client(vector<Client>& DB) {
 			if (answer == "y") {
 				DB.push_back(client);
 				cout << "\n Adding new client was done\n";
-				cout << "\n------------------------------------------------------------------------------\n";
+				cout << "\n---------------------------------------------------------------------------------\n";
 			}
 			else if (answer == "n") { 
 				cout << "\n Adding new client was denied\n";
-				cout << "------------------------------------------------------------------------------\n";
+				cout << "\n---------------------------------------------------------------------------------\n";
 			}
 			else { 
 				"\n Incorrect answer\n Try again: ";
@@ -30,6 +30,6 @@ void ClientProfileCreator::add_new_client(vector<Client>& DB) {
 	if (!flag) {
 		DB.push_back(client);
 		cout << "\n Adding new client was done\n";
-		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "\n---------------------------------------------------------------------------------\n";
 	}
 }
