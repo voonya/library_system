@@ -44,16 +44,16 @@ void Interface_NewClient::work_loop(string& answer, vector<Client>& DB) {
 	while (answer != "q") {
 		if (answer == "s") {
 			set_info();
-			cout << "Finally we got:\n";
+			cout << "\n Finally we got:\n";
 			cout << get_main_info(client.get_client()) << "\n" << get_more_info(client.get_client());
-			cout << "Everything is correct? (y/n)";
+			cout << " Everything is correct? (y/n): ";
 			getline(cin, answer);
 			if (answer == "y") {
 				client.add_new_client(DB);
 				answer = "q";
 			}
 			else {
-				cout << " Okey. Lets try again";
+				cout << " Okey. Lets try again\n";
 				answer = "s";
 			}
 		}

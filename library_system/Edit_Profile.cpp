@@ -1,5 +1,9 @@
 #include "Edit_Profile.h"
 
+/*Edit_Profile::Edit_Profile(vector<Client> DB, string name, string surname, string phonenumber) {
+	index_in_db = -1;
+	client = find_client(DB, name, surname, phonenumber, index_in_db);
+}*/
 
 Client Edit_Profile::find_client(vector<Client> DB, string name, string surname, string phonenumber, int& index) {
 	Client client;
@@ -15,15 +19,16 @@ Client Edit_Profile::find_client(vector<Client> DB, string name, string surname,
 }
 void Edit_Profile::update_info(Client client, vector<Client>& DB, int index_in_db) {
 	DB[index_in_db] = client;
+	cout << get_history_info(DB[index_in_db]);
 	cout << " The data has been successfully changed\n";
 }
 
 void Edit_Profile::change_history() {
-	cout << " You want delete or add? (d/a)";
+	cout << "\n You want delete or add? (d/a): ";
 	string answer; getline(cin, answer);
 	if (answer == "d") {
 		int index;
-		cout << " What number to delete?"; cin >> index;
+		cout << " What number to delete? "; cin >> index;
 		client.history.erase(client.history.begin() + index - 1);
 		cin.ignore();
 	}
@@ -35,15 +40,15 @@ void Edit_Profile::change_history() {
 }
 void Edit_Profile::show_history() {
 	for (int i = 0; i < client.history.size(); i++) {
-		cout << " " << i + 1 << ") " << client.history[i] << "\n";
+		cout << "\t" << i + 1 << ") " << client.history[i] << "\n";
 	}
 }
 void Edit_Profile::change_debts() {
-	cout << " You want delete or add? (d/a)";
+	cout << "\n You want delete or add? (d/a): ";
 	string answer; getline(cin, answer);
 	if (answer == "d") {
 		int index;
-		cout << " What number to delete?"; cin >> index;
+		cout << " What number to delete? "; cin >> index;
 		client.debts.erase(client.debts.begin() + index - 1);
 		cin.ignore();
 	}
@@ -56,16 +61,16 @@ void Edit_Profile::change_debts() {
 }
 void Edit_Profile::show_debts() {
 	for (int i = 0; i < client.debts.size(); i++) {
-		cout << " " << i + 1 << ") " << client.debts[i] << "\n";
+		cout << "\t" << i + 1 << ") " << client.debts[i] << "\n";
 	}
 }
 void Edit_Profile::show_reservation() {
 	for (int i = 0; i < client.reservation.size(); i++) {
-		cout << " " << i + 1 << ") " << client.reservation[i] << "\n";
+		cout << "\t" << i + 1 << ") " << client.reservation[i] << "\n";
 	}
 }
 void Edit_Profile::change_reservation() {
-	cout << " You want delete or add? (d/a)";
+	cout << "\n You want delete or add? (d/a)";
 	string answer; getline(cin, answer);
 	if (answer == "d") {
 		int index;

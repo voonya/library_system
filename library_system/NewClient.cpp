@@ -1,9 +1,6 @@
 #include "NewClient.h"
 #include <iostream>
 
-
-
-
 void NewClient::add_new_client(vector<Client>& DB) {
 	bool flag = false;
 	for (int i = 0; i < DB.size(); i++) {

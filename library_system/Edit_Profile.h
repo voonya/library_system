@@ -6,10 +6,6 @@ class Edit_Profile
 public:
 	Client client;
 	int index_in_db;
-	Edit_Profile(vector<Client> DB, string name, string surname, string phonenumber) {
-		index_in_db = -1;
-		client = find_client(DB,name,surname,phonenumber, index_in_db);
-	}
 	Client find_client(vector<Client> DB, string name, string surname, string phonenumber, int &index_in_db);
 	void update_info(Client client, vector<Client>& DB, int index_in_db);
 	void change_name(string name) { client.name = name; }

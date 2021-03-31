@@ -9,6 +9,7 @@ class Date {
 	int month;
 	int year;
 public:
+	Date() {};
 	Date(int d, int m, int y) : day(d), month(m), year(y) {};
 	string get_date();
 	friend class Client;
@@ -25,7 +26,16 @@ class Client {
 	vector<string> reservation;
 	vector<string> history;
 public:
-	/*
+	Client() { date_of_birth = Date(1, 1, 2000); }
+	friend class NewClient;
+	friend class Edit_Profile;
+	friend string get_main_info(Client c);
+	friend string get_more_info(Client c);
+	friend string get_debts_info(Client c);
+	friend string get_reservation_info(Client c);
+	friend string get_history_info(Client c);
+};
+/*
 	void set_date_birth(int d, int m, int y) {
 		date_of_birth.day = d;
 		date_of_birth.month = m;
@@ -41,11 +51,3 @@ public:
 	void add_book_debts(string book) { debts.push_back(book); }
 	string get_main_info();
 	string get_more_info();*/
-	friend class NewClient;
-	friend class Edit_Profile;
-	friend string get_main_info(Client c);
-	friend string get_more_info(Client c);
-	friend string get_debts_info(Client c);
-	friend string get_reservation_info(Client c);
-	friend string get_history_info(Client c);
-};

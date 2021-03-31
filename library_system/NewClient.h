@@ -17,10 +17,7 @@ public:
 	vector<string> get_debts_list() { return client.debts; }
 	vector<string> get_reservation_list() { return client.reservation; }
 	//void add_book_reservation(string book) { client.reservation.push_back(book); }
-	//void add_book_debts(string book) { client.debts.push_back(book); }*/
+	//void add_book_debts(string book) { client.debts.push_back(book); }
 	void add_new_client(vector<Client>& DB);
 	Client get_client() { return client; }
 };
-
-string get_main_info(Client c);
-string get_more_info(Client c);
