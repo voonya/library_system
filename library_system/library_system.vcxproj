@@ -139,6 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BookCatalogueUI.cpp" />
+    <ClCompile Include="BookDatabase.cpp" />
+    <ClCompile Include="BookOutputter.cpp" />
+    <ClCompile Include="BookProcessing.cpp" />
     <ClCompile Include="Client_class.cpp" />
     <ClCompile Include="Edit_Profile.cpp" />
     <ClCompile Include="Interface_NewClient.cpp" />
@@ -147,8 +151,13 @@
     <ClCompile Include="NewClient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BookCatalogueUI.h" />
+    <ClInclude Include="BookDatabase.h" />
+    <ClInclude Include="Booking.h" />
+    <ClInclude Include="BookProcessing.h" />
     <ClInclude Include="Client_header.h" />
     <ClInclude Include="Edit_Profile.h" />
+    <ClInclude Include="BookOutputter.h" />
     <ClInclude Include="Interface_NewClient.h" />
     <ClInclude Include="Menu_Edit_Profile.h" />
     <ClInclude Include="NewClient.h" />
