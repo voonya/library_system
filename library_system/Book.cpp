@@ -1,7 +1,7 @@
 #include <queue>
 #include "Book.h"
 
-Book::Book(int ID, string t, string auth, int p, string addInfo, queue< Booking > _queue) : id(ID), title(t), author(auth), pages(p), additionalInfo(addInfo), bookingQueue(_queue) {};
+Book::Book(int ID, string t, string auth, int y, int p, string addInfo, queue< Booking > _queue) : id(ID), title(t), author(auth), year(y), pages(p), additionalInfo(addInfo), bookingQueue(_queue) {};
 
 int Book::getId() {
 	return id;
@@ -21,6 +21,14 @@ string Book::getAuthor() {
 
 void Book::setAuthor(string newAuthor) {
 	author = newAuthor;
+}
+
+int Book::getYear() {
+	return year;
+}
+
+void Book::setYear(int newYear) {
+	year = newYear;
 }
 
 int Book::getPages() {

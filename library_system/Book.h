@@ -9,16 +9,19 @@ class Book {
 	int id;
 	string title;
 	string author;
+	int year;
 	int pages;
 	string additionalInfo;
 	queue< Booking > bookingQueue;
 public: 
-	Book(int ID, string t, string auth, int p, string addInfo, queue< Booking > _queue);
+	Book(int ID, string t, string auth, int y, int p, string addInfo, queue< Booking > _queue);
 	int getId();
 	string getTitle();
 	void setTitle(string newTitle);
 	string getAuthor();
 	void setAuthor(string newAuthor);
+	int getYear();
+	void setYear(int newYear);
 	int getPages();
 	void setPages(int newPages);
 	string getAdditionalInfo();
