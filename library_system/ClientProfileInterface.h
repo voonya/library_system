@@ -1,9 +1,8 @@
 #pragma once
 #include "ClientProfileEditor.h"
 
-class ClientProfileInterface : public ClientProfileEditor
+class ClientProfileInterface : protected ClientProfileEditor
 {
-
 public:
 	//Menu_Edit_Profile() {};
 	void start_menu(vector<Client>& DB);

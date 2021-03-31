@@ -3,7 +3,7 @@
 #include <iostream>
 class ClientProfileEditor
 {
-public:
+protected:
 	Client client;
 	int index_in_db;
 	Client find_client(vector<Client> DB, string name, string surname, string phonenumber);
