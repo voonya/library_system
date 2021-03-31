@@ -33,10 +33,23 @@
     <ClCompile Include="Menu_Edit_Profile.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="BookDatabase.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Book.cpp">
+=======
+    <ClCompile Include="BookCatalogueUI.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BookDatabase.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BookOutputter.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BookProcessing.cpp">
+>>>>>>> 78d0c008b6559bbd41d3219a804a66bb4a27f4cc
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,13 +69,26 @@
     <ClInclude Include="Menu_Edit_Profile.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="BookCatalogueUI.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+>>>>>>> 78d0c008b6559bbd41d3219a804a66bb4a27f4cc
     <ClInclude Include="BookDatabase.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Booking.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Book.h">
+=======
+    <ClInclude Include="BookOutputter.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BookProcessing.h">
+>>>>>>> 78d0c008b6559bbd41d3219a804a66bb4a27f4cc
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
