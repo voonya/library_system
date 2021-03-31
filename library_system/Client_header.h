@@ -18,7 +18,7 @@ public:
 class Client {
 	string name;
 	string surname;
-	Date date_of_birth = Date(1, 1, 2000);
+	Date date_of_birth;
 	string phone_number;
 	string address;
 	vector<string> debts;
