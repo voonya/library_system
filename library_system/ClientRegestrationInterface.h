@@ -1,5 +1,5 @@
 #pragma once
-#include "NewClient.h"
+#include "ClientProfileCreator.h"
 class Interface_NewClient
 {
 	NewClient client;

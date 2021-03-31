@@ -1,4 +1,4 @@
-#include "NewClient.h"
+#include "ClientProfileCreator.h"
 #include <iostream>
 void NewClient::add_new_client(vector<Client>& DB) {
 	bool flag = false;
