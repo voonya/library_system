@@ -61,7 +61,12 @@ void BookDatabase::editBook(Book* book, string newTitle, string newAuthor, int n
 void BookDatabase::bookTheBook(Book* book, Client* client){
 	Booking newBooking;
 	newBooking.client = client;
+	client->reservation.push_back(book->getBookInfo());
 	book->addBookingElement(newBooking);
+}
+
+void BookDatabase::takeTheBook(Book* book, Client* client) {
+	client->debts.push_back(book->getBookInfo());
 }
 
 vector<Book> BookDatabase::findByAuthor(string author){
@@ -87,23 +92,28 @@ vector<Book> BookDatabase::getAllBooks()
 	return books;
 }
 
+vector<Book>* BookDatabase::getAllBooksPointer()
+{
+	return &books;
+}
+
 vector<Book> BookDatabase::sortBooksByAuthor()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), authorComparator);
-	return new_books;
+	return books;
 }
 
 vector<Book> BookDatabase::sortBooksByTitle()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), titleComparator);
-	return new_books;
+	return books;
 }
 
 vector<Book> BookDatabase::sortBooksByYear()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), yearComparator);
-	return new_books;
+	return books;
 }
