@@ -1,0 +1,11 @@
+#pragma once
+#include "BookDatabase.h"
+
+class BooksProcessingMenu {
+public:
+	void startDialogMenu(BookDatabase& DB);
+	void showBooks(BookDatabase& DB);
+	void addNewBook(BookDatabase& DB, string title, string author, int year, int pages, string additionalInfo);
+	void editBook(BookDatabase& DB, int bookNumber, string newTitle, string newAuthor, int newYear, int newPages, string newAdditionalInfo);
+	void removeBook(BookDatabase& DB, int bookNumber);
+};
