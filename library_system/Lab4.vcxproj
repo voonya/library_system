@@ -103,6 +103,9 @@
     <ClCompile Include="BookDatabase.cpp" />
     <ClCompile Include="BookOutputter.cpp" />
     <ClCompile Include="BookProcessing.cpp" />
+    <ClCompile Include="ClientCatalogueUI.cpp" />
+    <ClCompile Include="ClientDatabase.cpp" />
+    <ClCompile Include="ClientDatabaseOutputter.cpp" />
     <ClCompile Include="Client_class.cpp" />
     <ClCompile Include="Edit_Profile.cpp" />
     <ClCompile Include="Interface_NewClient.cpp" />
@@ -121,6 +124,9 @@
     <ClInclude Include="BookingUserMenu.h" />
     <ClInclude Include="BookOutputter.h" />
     <ClInclude Include="BookProcessing.h" />
+    <ClInclude Include="ClientCatalogueUI.h" />
+    <ClInclude Include="ClientDatabase.h" />
+    <ClInclude Include="ClientDatabaseOutputter.h" />
     <ClInclude Include="Client_header.h" />
     <ClInclude Include="Edit_Profile.h" />
     <ClInclude Include="Interface_NewClient.h" />

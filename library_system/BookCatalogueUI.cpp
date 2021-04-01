@@ -14,7 +14,7 @@ void book_catalogue_ui::output_book_catalogue()
 	}
 }
 
-void book_catalogue_ui::output_menu()
+bool book_catalogue_ui::output_menu()
 {
 	cout << "Enter 1 to output the catalogue" << endl;
 	cout << "Enter 2 to output the catalogue processing form" << endl;
@@ -25,18 +25,15 @@ void book_catalogue_ui::output_menu()
 	{
 	case 1:
 		output_book_catalogue();
-		output_menu();
-		break;
+		return output_menu();
 	case 2:
 		output_catalogue_processing_form();
-		output_menu();
-		break;
+		return output_menu();
 	case 3:
-		// quit the menu
-		break;
+		return false;
 	default:
 		cout << "Unknown choice!" << endl;
-		output_menu();
+		return output_menu();
 	}
 
 	
