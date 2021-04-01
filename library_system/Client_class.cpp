@@ -6,6 +6,15 @@ string Date::get_date() {
 	return to_string(day) + "." + to_string(month) + "." + to_string(year);
 }
 
+Client::Client(string name, string surname, Date date, string phone, string address)
+{
+	this->name = name;
+	this->surname = surname;
+	this->date_of_birth = date;
+	this->phone_number = phone;
+	this->address = address;
+}
+
 string get_more_info(Client c) {
 	string info = " Phonenumber: " + c.phone_number + "\n Address: " + c.address + "\n\n";
 	return info;

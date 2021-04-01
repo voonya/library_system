@@ -26,6 +26,7 @@ class Client {
 	vector<string> reservation;
 	vector<string> history;
 public:
+	Client(string name, string surname, Date date, string phone, string address);
 	Client() { date_of_birth = Date(1, 1, 2000); }
 	friend class ClientProfileCreator;
 	friend class ClientProfileEditor;

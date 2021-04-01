@@ -15,6 +15,8 @@ class BookDatabase {
 	vector< Book > books;
 	static int bookId;
 public:
+	BookDatabase(vector<Book> books);
+	void fake_init();
 	void addBookToDatabase(string title, string author, int year, int pages, string additionalInfo);
 	void removeBookFromDatabase(Book* book);
 	void editBook(Book* book, string newTitle, string newAuthor, int newYear, int newPages, string newAdditionalInfo);

@@ -11,6 +11,16 @@ ClientDatabase::ClientDatabase(std::vector<Client> clients)
 	this->clients = clients;
 }
 
+void ClientDatabase::fake_init()
+{
+	Client client1("Vasya", "Pupkin", Date(3, 12, 2000), "+3809944343", "-");
+	Client client2("Lena", "Pupkina", Date(3, 12, 2000), "+3809942343", "-");
+	Client client3("Olya", "Hink", Date(8, 11, 2002), "+38099412343", "-");
+	addClientToDatabase(client1);
+	addClientToDatabase(client2);
+	addClientToDatabase(client3);
+}
+
 void ClientDatabase::addClientToDatabase(const Client& client) {
 	clients.push_back(client);
 }
@@ -47,12 +57,12 @@ vector<Client> ClientDatabase::findByNameAndSurname(string name, string surname)
 
 bool sorting_func_name(Client a, Client b)
 {
-	return a.name > b.name;
+	return a.name < b.name;
 }
 
 bool sorting_func_surname(Client a, Client b)
 {
-	return a.surname > b.surname;
+	return a.surname < b.surname;
 }
 
 vector<Client>* ClientDatabase::getAllClients()

@@ -6,7 +6,6 @@
 using namespace std;
 void ClientCatalogueUI::output_client_catalogue()
 {
-	cout << "Client catalogue:" << endl;
 	ClientDatabaseOutputter outputter(client_catalogue);
 	outputter.output_client_database();
 }
@@ -73,5 +72,4 @@ void ClientCatalogueUI::output_catalogue_processing_form()
 		cout << "Unknown parameter" << endl;
 	}
 	}
-	output_menu();
 }

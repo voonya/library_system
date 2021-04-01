@@ -8,6 +8,7 @@ class ClientDatabase
 	std::vector< Client > clients;
 public:
 	ClientDatabase(std::vector<Client> clients);
+	void fake_init();
 	void addClientToDatabase(const Client& client);
 	void removeClientFromDatabase(Client* client);
 	void editClient(Client* client, string newName, string newSurname, Date newBirth, string newPhone);

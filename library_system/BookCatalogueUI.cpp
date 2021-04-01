@@ -8,7 +8,7 @@ void book_catalogue_ui::output_book_catalogue()
 {
 	cout << "Book catalogue:" << endl;
 	book_outputter outputter;
-	for (Book book : book_catalogue.getAllBooks())
+	for (Book book : book_catalogue->getAllBooks())
 	{
 		outputter.output_book(book);
 	}
@@ -22,6 +22,11 @@ void output_book_catalogue_no_database(vector<Book> books)
 	{
 		outputter.output_book(book);
 	}
+}
+
+book_catalogue_ui::book_catalogue_ui(BookDatabase* catalogue)
+{
+	book_catalogue = catalogue;
 }
 
 bool book_catalogue_ui::output_menu()
@@ -60,21 +65,21 @@ void book_catalogue_ui::output_catalogue_processing_form()
 	{
 	case 1:
 		{
-		sorted = book_catalogue.sortBooksByTitle();
+		sorted = book_catalogue->sortBooksByTitle();
 		cout << "Catalogue sorted!" << endl;
 		output_book_catalogue_no_database(sorted);
 		break;
 		}
 	case 2:
 		{
-		sorted = book_catalogue.sortBooksByAuthor();
+		sorted = book_catalogue->sortBooksByAuthor();
 		cout << "Catalogue sorted!" << endl;
 		output_book_catalogue_no_database(sorted);
 		break;
 		}
 	case 3:
 	{
-		sorted = book_catalogue.sortBooksByYear();
+		sorted = book_catalogue->sortBooksByYear();
 		cout << "Catalogue sorted!" << endl;
 		output_book_catalogue_no_database(sorted);
 		break;
