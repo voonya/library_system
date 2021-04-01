@@ -22,6 +22,7 @@ public:
 	void removeBookFromDatabase(Book* book);
 	void editBook(Book* book, string newTitle, string newAuthor, int newYear, int newPages, string newAdditionalInfo);
 	void bookTheBook(Book* book, Client* client);
+	void takeTheBook(Book* book, Client* client);
 	vector< Book > findByAuthor(string author);
 	vector< Book > findByTitle(string title);
 	vector< Book > getAllBooks();

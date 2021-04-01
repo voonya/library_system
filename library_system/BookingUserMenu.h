@@ -10,4 +10,5 @@ public:
 	void showBooks(BookDatabase& DB);
 	void showBookings(BookDatabase& DB);
 	void bookingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client);
+	void takingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client);
 };

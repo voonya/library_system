@@ -61,7 +61,12 @@ void BookDatabase::editBook(Book* book, string newTitle, string newAuthor, int n
 void BookDatabase::bookTheBook(Book* book, Client* client){
 	Booking newBooking;
 	newBooking.client = client;
+	client->reservation.push_back(book->getBookInfo());
 	book->addBookingElement(newBooking);
+}
+
+void BookDatabase::takeTheBook(Book* book, Client* client) {
+	client->debts.push_back(book->getBookInfo());
 }
 
 vector<Book> BookDatabase::findByAuthor(string author){

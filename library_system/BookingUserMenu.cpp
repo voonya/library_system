@@ -39,7 +39,7 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 		showBookings(DB);
 	}
 	else if (choice == 2) {
-		cout << "Before choosing the book to book, choose a client (1) or quit (2)" << endl;
+		cout << "Before choosing the book to book or take, choose a client (1) or quit (2)" << endl;
 		int answer;
 		cin >> answer;
 		Client* chosen;
@@ -80,25 +80,29 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 
 		int number = 0;
 		cout << "To view books enter '1'\n";
-		cout << "To exit from booking interface enter '2'\n";
+		cout << "To exit from menu enter '2'\n";
 		cout << "Your input: ";
 		cin >> number;
 		if (number == 1) {
 			showBooks(DB);
 			cout << "To choose book for enter '1'\n";
-			cout << "To exit from booking interface enter '2'\n";
+			cout << "To exit from menu enter '2'\n";
 			cout << "Your input: ";
 			cin >> number;
 			if (number == 2)
 				return;
 			int bookNumber = chooseBook(DB.getAllBooks().size());
-			cout << "Your choosed book is: " << bookNumber << endl;
-			cout << "To book the choosed book enter '1'\n";
-			cout << "To exit from booking interface enter '2'\n";
+			cout << "Your chosen book is: " << bookNumber << endl;
+			cout << "To book the chosen book enter '1'\n";
+			cout << "To take the chosen book enter '2'\n";
+			cout << "To exit from booking interface enter '3'\n";
 			cout << "Your input: ";
 			cin >> number;
 			if (number == 1) {
 				bookingTheBook(DB, bookBooker, bookNumber - 1, chosen);
+			}
+			if (number == 2) {
+				takingTheBook(DB, bookBooker, bookNumber - 1, chosen);
 			}
 		}
 	} else
@@ -138,7 +142,12 @@ void BookingUserMenu::showBookings(BookDatabase& DB)
 
 void BookingUserMenu::bookingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client)
 {
-	auto test = (DB.getAllBooksPointer());
 	Book* book = &((*(DB.getAllBooksPointer()))[bookNumber]);
 	bookBooker.bookTheBook(DB, book, client);
+}
+
+void BookingUserMenu::takingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client)
+{
+	Book* book = &((*(DB.getAllBooksPointer()))[bookNumber]);
+	bookBooker.takeTheBook(DB, book, client);
 }

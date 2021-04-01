@@ -33,7 +33,7 @@ int main()
 			"2 - edit a client profile" << endl <<
 			"3 - open the book catalogue" << endl <<
 			"4 - open the client catalogue" << endl <<
-			"5 - open the booking menu" << endl <<
+			"5 - open the menu to book or take the book" << endl <<
 			"6 - quit the app" << endl;
 		int choice;
 		cin >> choice;
