@@ -38,6 +38,8 @@ public:
 	friend class ClientDatabase;
 	friend bool sorting_func_name(Client a, Client b);
 	friend bool sorting_func_surname(Client a, Client b);
+	friend Client* findClient(vector<Client>& DB, string name, string surname);
+	friend class BookDatabase;
 };
 /*
 	void set_date_birth(int d, int m, int y) {

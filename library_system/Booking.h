@@ -2,5 +2,7 @@
 #include "Client_header.h"
 
 struct Booking{
-	Client* client;
+	string client_name;
+	string client_surname;
+	string phone_number;
 };
