@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "ClientDatabase.h"
+#include "BookingUserMenu.h"
 
 
 int main()
@@ -21,6 +22,8 @@ int main()
 	BookDatabase book_database(bookVector);
 	book_database.fake_init();
 	book_catalogue_ui book_catalogue_ui(&book_database);
+
+	BookingUserMenu booking;
 	
 	bool running = true;
 	while (running)
@@ -30,7 +33,8 @@ int main()
 			"2 - edit a client profile" << endl <<
 			"3 - open the book catalogue" << endl <<
 			"4 - open the client catalogue" << endl <<
-			"5 - quit the app" << endl;
+			"5 - open the menu to book or take the book" << endl <<
+			"6 - quit the app" << endl;
 		int choice;
 		cin >> choice;
 		switch (choice)
@@ -56,6 +60,12 @@ int main()
 			break;
 		}
 		case 5:
+			{
+			BookBooker booker;
+			booking.startDialogMenu(book_database, booker, DB_Clients);
+			break;
+			}
+		case 6:
 		{
 			running = false;
 			break;
