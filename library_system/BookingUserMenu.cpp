@@ -31,7 +31,7 @@ vector<Client*> choose_client(ClientDatabase& clientDB)
 void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB)
 {
 	cout << "It's menu of booking books\n";
-	cout << "To see the bookings for a book enter 1, to book a book enter 2, to quit enter 3: ";
+	cout << "To see the bookings for a book enter 1, to book or take a book enter 2, to quit enter 3: ";
 	int choice;
 	cin >> choice;
 	if (choice == 1)
