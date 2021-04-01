@@ -46,11 +46,11 @@ void ClientDatabase::editClient(Client* client, string newName, string newSurnam
 }
 
 
-vector<Client> ClientDatabase::findByNameAndSurname(string name, string surname) {
-	vector< Client > response;
+vector<Client*> ClientDatabase::findByNameAndSurname(string name, string surname) {
+	vector< Client* > response;
 	for (int i = 0; i < clients.size(); i++) {
 		if (clients[i].name.find(name) != -1 && clients[i].surname.find(name))
-			response.push_back(clients[i]);
+			response.push_back(&clients[i]);
 	}
 	return response;
 }
