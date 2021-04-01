@@ -48,7 +48,7 @@
     <ClCompile Include="NewClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BookingUserInterface.cpp">
+    <ClCompile Include="BookingUserMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BookBooker.cpp">
@@ -71,7 +71,7 @@
     <ClInclude Include="Booking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BookingUserInterface.h">
+    <ClInclude Include="BookingUserMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BookOutputter.h">

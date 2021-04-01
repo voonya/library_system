@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BookingUserInterface.h"
+#include "BookingUserMenu.h"
 
 
 int chooseBook(int count) {
@@ -13,7 +13,7 @@ int chooseBook(int count) {
 	return bookNumber;
 }
 
-void BookingUserInterface::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, Client* client)
+void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, Client* client)
 {
 	cout << "It's menu of booking books\n";
 	int number = 0;
@@ -41,7 +41,7 @@ void BookingUserInterface::startDialogMenu(BookDatabase& DB, BookBooker& bookBoo
 	}
 }
 
-void BookingUserInterface::showBooks(BookDatabase& DB)
+void BookingUserMenu::showBooks(BookDatabase& DB)
 {
 	vector< Book > books = DB.getAllBooks();
 	for (int i = 0; i < books.size(); i++) {
@@ -51,7 +51,7 @@ void BookingUserInterface::showBooks(BookDatabase& DB)
 	}
 }
 
-void BookingUserInterface::bookingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client)
+void BookingUserMenu::bookingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client)
 {
 	bookBooker.bookTheBook(DB, (&DB.getAllBooks()[bookNumber]), client);
 }

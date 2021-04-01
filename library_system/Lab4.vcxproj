@@ -109,7 +109,7 @@
     <ClCompile Include="library_system.cpp" />
     <ClCompile Include="Menu_Edit_Profile.cpp" />
     <ClCompile Include="NewClient.cpp" />
-    <ClCompile Include="BookingUserInterface.cpp" />
+    <ClCompile Include="BookingUserMenu.cpp" />
     <ClCompile Include="BookBooker.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +118,7 @@
     <ClInclude Include="BookCatalogueUI.h" />
     <ClInclude Include="BookDatabase.h" />
     <ClInclude Include="Booking.h" />
-    <ClInclude Include="BookingUserInterface.h" />
+    <ClInclude Include="BookingUserMenu.h" />
     <ClInclude Include="BookOutputter.h" />
     <ClInclude Include="BookProcessing.h" />
     <ClInclude Include="Client_header.h" />
