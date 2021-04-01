@@ -20,6 +20,7 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 			string title, author, additionalInfo;
 			int year, pages;
 			cout << " Enter the title of book: ";
+			cin.ignore();
 			getline(cin, title);
 			cout << " Enter the author of book: ";
 			getline(cin, author);
@@ -28,6 +29,7 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 			cout << " Enter number of pages of book: ";
 			cin >> pages;
 			cout << " Enter additional information about book: ";
+			cin.ignore();
 			getline(cin, additionalInfo);
 			addNewBook(DB, title, author, year, pages, additionalInfo);
 			cout << " New book successfully added!! \n";

@@ -1,6 +1,7 @@
 #include "BookCatalogueUI.h"
 #include "BookOutputter.h"
 #include "BookProcessing.h"
+#include "BooksProcessingMenu.h"
 #include <iostream>
 
 using namespace std;
@@ -57,36 +58,47 @@ bool book_catalogue_ui::output_menu()
 
 void book_catalogue_ui::output_catalogue_processing_form()
 {
-	cout << "Choose sorting parameter (1 - title, 2 - author, 3 - year): ";
-	int choice;
-	cin >> choice;
-	vector<Book> sorted;
-	switch (choice)
+	cout << "To sort the catalogue, enter 1" << endl <<
+		"To edit/add/remove a book, enter 2" << endl;
+	int answer;
+	cin >> answer;
+	if (answer == 1)
 	{
-	case 1:
+		cout << "Choose sorting parameter (1 - title, 2 - author, 3 - year): ";
+		int choice;
+		cin >> choice;
+		vector<Book> sorted;
+		switch (choice)
 		{
-		sorted = book_catalogue->sortBooksByTitle();
-		cout << "Catalogue sorted!" << endl;
-		output_book_catalogue_no_database(sorted);
-		break;
-		}
-	case 2:
+		case 1:
 		{
-		sorted = book_catalogue->sortBooksByAuthor();
-		cout << "Catalogue sorted!" << endl;
-		output_book_catalogue_no_database(sorted);
-		break;
+			sorted = book_catalogue->sortBooksByTitle();
+			cout << "Catalogue sorted!" << endl;
+			output_book_catalogue_no_database(sorted);
+			break;
 		}
-	case 3:
+		case 2:
+		{
+			sorted = book_catalogue->sortBooksByAuthor();
+			cout << "Catalogue sorted!" << endl;
+			output_book_catalogue_no_database(sorted);
+			break;
+		}
+		case 3:
+		{
+			sorted = book_catalogue->sortBooksByYear();
+			cout << "Catalogue sorted!" << endl;
+			output_book_catalogue_no_database(sorted);
+			break;
+		}
+		default:
+		{
+			cout << "Unknown parameter" << endl;
+		}
+		}
+	} else
 	{
-		sorted = book_catalogue->sortBooksByYear();
-		cout << "Catalogue sorted!" << endl;
-		output_book_catalogue_no_database(sorted);
-		break;
-	}
-	default:
-	{
-		cout << "Unknown parameter" << endl;
-	}
+		BooksProcessingMenu processing;
+		processing.startDialogMenu(*book_catalogue);
 	}
 }
