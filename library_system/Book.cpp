@@ -59,13 +59,13 @@ void Book::addBookingElement(Booking elem) {
 
 string Book::getBookInfo()
 {
-	string str = "Title: " + title + "\nAuthor: " + author + "\nNumber pages: " + to_string(pages);
+	string str = "Title: " + title + "\nAuthor: " + author + "\nYear: " + to_string(year) + "\nNumber pages: " + to_string(pages);
 	return str;
 }
 
 string Book::getAllBookInfo()
 {
-	string str = "Title: " + title + "\nAuthor: " + author + "\nNumber pages: " + to_string(pages) +
+	string str = "Title: " + title + "\nAuthor: " + author + "\nYear: " + to_string(year) + "\nNumber pages: " + to_string(pages) +
 		"\nAdditional info: " + additionalInfo;
 	return str;
 }

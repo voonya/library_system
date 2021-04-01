@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B0D395B8-2550-46E3-9962-DEA6B944D761}</ProjectGuid>
+    <ProjectGuid>{5C7FDE42-D3F9-4CA8-88BE-38E594020CC1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -98,32 +98,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="library_system\Book.cpp" />
-    <ClCompile Include="library_system\BookCatalogueUI.cpp" />
-    <ClCompile Include="library_system\BookDatabase.cpp" />
-    <ClCompile Include="library_system\BookOutputter.cpp" />
-    <ClCompile Include="library_system\BookProcessing.cpp" />
-    <ClCompile Include="library_system\Client_class.cpp" />
-    <ClCompile Include="library_system\Edit_Profile.cpp" />
-    <ClCompile Include="library_system\Interface_NewClient.cpp" />
-    <ClCompile Include="library_system\library_system.cpp" />
-    <ClCompile Include="library_system\Menu_Edit_Profile.cpp" />
-    <ClCompile Include="library_system\NewClient.cpp" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="BookCatalogueUI.cpp" />
+    <ClCompile Include="BookDatabase.cpp" />
+    <ClCompile Include="BookOutputter.cpp" />
+    <ClCompile Include="BookProcessing.cpp" />
+    <ClCompile Include="Client_class.cpp" />
+    <ClCompile Include="Edit_Profile.cpp" />
+    <ClCompile Include="Interface_NewClient.cpp" />
+    <ClCompile Include="library_system.cpp" />
+    <ClCompile Include="Menu_Edit_Profile.cpp" />
+    <ClCompile Include="NewClient.cpp" />
+    <ClCompile Include="BookingUserInterface.cpp" />
+    <ClCompile Include="BookBooker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BookingUserInterface.h" />
+    <ClInclude Include="Book.h" />
     <ClInclude Include="BookBooker.h" />
-    <ClInclude Include="library_system\Book.h" />
-    <ClInclude Include="library_system\BookCatalogueUI.h" />
-    <ClInclude Include="library_system\BookDatabase.h" />
-    <ClInclude Include="library_system\Booking.h" />
-    <ClInclude Include="library_system\BookOutputter.h" />
-    <ClInclude Include="library_system\BookProcessing.h" />
-    <ClInclude Include="library_system\Client_header.h" />
-    <ClInclude Include="library_system\Edit_Profile.h" />
-    <ClInclude Include="library_system\Interface_NewClient.h" />
-    <ClInclude Include="library_system\Menu_Edit_Profile.h" />
-    <ClInclude Include="library_system\NewClient.h" />
+    <ClInclude Include="BookCatalogueUI.h" />
+    <ClInclude Include="BookDatabase.h" />
+    <ClInclude Include="Booking.h" />
+    <ClInclude Include="BookingUserInterface.h" />
+    <ClInclude Include="BookOutputter.h" />
+    <ClInclude Include="BookProcessing.h" />
+    <ClInclude Include="Client_header.h" />
+    <ClInclude Include="Edit_Profile.h" />
+    <ClInclude Include="Interface_NewClient.h" />
+    <ClInclude Include="Menu_Edit_Profile.h" />
+    <ClInclude Include="NewClient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
