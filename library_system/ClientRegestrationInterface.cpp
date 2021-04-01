@@ -33,17 +33,18 @@ void ClientRegestrationInterface::set_info() {
 	client.set_address(a);
 }
 
-void ClientRegestrationInterface::start_menu(vector<Client>& DB) {
+void ClientRegestrationInterface::start_menu(vector<Client>* DB) {
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;
+	cin.ignore(1);
 	getline(cin, answer);
 	work_loop(answer, DB);
 }
 
 
 
-void ClientRegestrationInterface::work_loop(string& answer, vector<Client>& DB) {
+void ClientRegestrationInterface::work_loop(string& answer, vector<Client>* DB) {
 	while (answer != "q") {
 		if (answer == "s") {
 			set_info();

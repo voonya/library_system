@@ -75,19 +75,19 @@ vector<Book> BookDatabase::getAllBooks()
 	return books;
 }
 
-vector<Book> BookDatabase::sortBooksByAuthor(string author)
+vector<Book> BookDatabase::sortBooksByAuthor()
 {
 	sort(books.begin(), books.end(), authorComparator);
 	return books;
 }
 
-vector<Book> BookDatabase::sortBooksByTitle(string title)
+vector<Book> BookDatabase::sortBooksByTitle()
 {
 	sort(books.begin(), books.end(), titleComparator);
 	return books;
 }
 
-vector<Book> BookDatabase::sortBooksByYear(int year)
+vector<Book> BookDatabase::sortBooksByYear()
 {
 	sort(books.begin(), books.end(), yearComparator);
 	return books;

@@ -10,7 +10,7 @@ ClientDatabaseOutputter::ClientDatabaseOutputter(ClientDatabase* database)
 void ClientDatabaseOutputter::output_client_database()
 {
 	cout << "Client catalogue:" << endl;
-	for (Client client : database->getAllClients())
+	for (Client client : *(database->getAllClients()))
 	{
 		cout << request_client_info(client);
 	}

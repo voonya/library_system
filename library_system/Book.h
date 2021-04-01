@@ -30,4 +30,5 @@ public:
 	void addBookingElement(Booking elem);
 	string getBookInfo();
 	string getAllBookInfo();
+	friend class book_outputter;
 };

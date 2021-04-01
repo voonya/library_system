@@ -53,19 +53,25 @@ void ClientCatalogueUI::output_catalogue_processing_form()
 	switch (choice)
 	{
 	case 1:
+	{
 		sorted = client_catalogue->sort_by_name();
 		ClientDatabaseOutputter outputter1(new ClientDatabase(sorted));
 		cout << "Catalogue sorted!" << endl;
 		outputter1.output_client_database();
 		break;
+	}
 	case 2:
+	{
 		sorted = client_catalogue->sort_by_surname();
 		ClientDatabaseOutputter outputter2(new ClientDatabase(sorted));
 		cout << "Catalogue sorted!" << endl;
 		outputter2.output_client_database();
 		break;
+	}
 	default:
+	{
 		cout << "Unknown parameter" << endl;
+	}
 	}
 	output_menu();
 }

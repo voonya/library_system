@@ -22,7 +22,7 @@ public:
 	vector< Book > findByAuthor(string author);
 	vector< Book > findByTitle(string title);
 	vector< Book > getAllBooks();
-	vector< Book > sortBooksByAuthor(string author);
-	vector< Book > sortBooksByTitle(string title);
-	vector< Book > sortBooksByYear(int year);
+	vector< Book > sortBooksByAuthor();
+	vector< Book > sortBooksByTitle();
+	vector< Book > sortBooksByYear();
 };

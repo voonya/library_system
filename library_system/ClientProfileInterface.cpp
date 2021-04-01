@@ -1,11 +1,12 @@
 #include "ClientProfileInterface.h"
 
 
-void ClientProfileInterface::start_menu(vector<Client>& DB) {
+void ClientProfileInterface::start_menu(vector<Client>* DB) {
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n It`s menu of changing profile of clients\n";
 	cout << " If you want to start enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;
+	cin.ignore(1);
 	getline(cin, answer);
 	cout << "\n---------------------------------------------------------------------------------\n";
 	while (answer != "q") {
@@ -17,7 +18,7 @@ void ClientProfileInterface::start_menu(vector<Client>& DB) {
 			getline(cin, surname);
 			cout << " Enter phonenumber: ";
 			getline(cin, phonenumber);
-			client = find_client(DB, name, surname, phonenumber);
+			client = find_client(*DB, name, surname, phonenumber);
 			if (index_in_db != -1) {
 				cout << "\n---------------------------------------------------------------------------------\n";
 				show_info();
@@ -42,7 +43,7 @@ void ClientProfileInterface::start_menu(vector<Client>& DB) {
 
 }
 
-void ClientProfileInterface::change_menu(vector<Client>& DB) {
+void ClientProfileInterface::change_menu(vector<Client>* DB) {
 	string answer = "";
 	while(answer!="q"){
 		cout << " What you want to change: (1) name, (2) surname, (3) phonenumber, (4) date of bith,\n (5) address, (6) debts, (7) reservation or (8) history (or quit)?\n Enter (1/2/3/4/5/6/7/8/q): ";
@@ -84,7 +85,7 @@ void ClientProfileInterface::change_menu(vector<Client>& DB) {
 			show_history();
 			change_history();
 		}
-		update_info(client, DB, index_in_db);
+		update_info(client, *DB, index_in_db);
 		cout << "\n---------------------------------------------------------------------------------\n";
 		show_info();
 		cout << "\n---------------------------------------------------------------------------------\n";

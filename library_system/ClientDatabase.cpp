@@ -55,21 +55,21 @@ bool sorting_func_surname(Client a, Client b)
 	return a.surname > b.surname;
 }
 
-vector<Client> ClientDatabase::getAllClients()
+vector<Client>* ClientDatabase::getAllClients()
 {
-	return clients;
+	return &clients;
 }
 
 vector< Client > ClientDatabase::sort_by_name()
 {
-	vector<Client> new_catalogue = getAllClients();
+	vector<Client> new_catalogue = *getAllClients();
 	sort(new_catalogue.begin(), new_catalogue.end(), sorting_func_name);
 	return new_catalogue;
 }
 
 vector< Client > ClientDatabase::sort_by_surname()
 {
-	vector<Client> new_catalogue = getAllClients();
+	vector<Client> new_catalogue = *getAllClients();
 	sort(new_catalogue.begin(), new_catalogue.end(), sorting_func_surname);
 	return new_catalogue;
 }

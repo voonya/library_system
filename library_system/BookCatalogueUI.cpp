@@ -14,6 +14,16 @@ void book_catalogue_ui::output_book_catalogue()
 	}
 }
 
+void output_book_catalogue_no_database(vector<Book> books)
+{
+	cout << "Book catalogue:" << endl;
+	book_outputter outputter;
+	for (Book book : books)
+	{
+		outputter.output_book(book);
+	}
+}
+
 bool book_catalogue_ui::output_menu()
 {
 	cout << "Enter 1 to output the catalogue" << endl;
@@ -45,16 +55,33 @@ void book_catalogue_ui::output_catalogue_processing_form()
 	cout << "Choose sorting parameter (1 - title, 2 - author, 3 - year): ";
 	int choice;
 	cin >> choice;
-	BookProcessing processing;
+	vector<Book> sorted;
 	switch (choice)
 	{
 	case 1:
-	case 2:
-	case 3:
-		processing.SortBookCatalogue(book_catalogue, choice);
+		{
+		sorted = book_catalogue.sortBooksByTitle();
 		cout << "Catalogue sorted!" << endl;
+		output_book_catalogue_no_database(sorted);
 		break;
+		}
+	case 2:
+		{
+		sorted = book_catalogue.sortBooksByAuthor();
+		cout << "Catalogue sorted!" << endl;
+		output_book_catalogue_no_database(sorted);
+		break;
+		}
+	case 3:
+	{
+		sorted = book_catalogue.sortBooksByYear();
+		cout << "Catalogue sorted!" << endl;
+		output_book_catalogue_no_database(sorted);
+		break;
+	}
 	default:
+	{
 		cout << "Unknown parameter" << endl;
+	}
 	}
 }

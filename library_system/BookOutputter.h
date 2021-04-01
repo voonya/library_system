@@ -1,5 +1,5 @@
 #pragma once
-#include "BookDatabase.h"
+#include "Book.h"
 
 class book_outputter
 {
