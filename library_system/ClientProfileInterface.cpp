@@ -64,9 +64,15 @@ void ClientProfileInterface::change_menu(vector<Client>* DB) {
 			change_phone_number(n);
 		}
 		else if (answer == "4") {
-			cout << " Input new date of birth: ";
+			cout << " Input new date of birth (format 1.1.2000): ";
 			string n; getline(cin, n);
-			change_phone_number(n);
+			int d, m, y;
+			d = stoi(n.substr(0, n.find("."))); // day
+			n.erase(0, n.find(".") + 1);
+			m = stoi(n.substr(0, n.find("."))); // month
+			n.erase(0, n.find(".") + 1);
+			y = stoi(n);
+			change_date(d,m,y);
 		}
 		else if (answer == "5") {
 			cout << " Input new address: ";
@@ -85,7 +91,8 @@ void ClientProfileInterface::change_menu(vector<Client>* DB) {
 			show_history();
 			change_history();
 		}
-		update_info(client, *DB, index_in_db);
+		update_info(client, *DB);
+		cout << " The data has been successfully changed\n";
 		cout << "\n---------------------------------------------------------------------------------\n";
 		show_info();
 		cout << "\n---------------------------------------------------------------------------------\n";

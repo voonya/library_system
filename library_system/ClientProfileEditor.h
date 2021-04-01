@@ -7,7 +7,7 @@ protected:
 	Client client;
 	int index_in_db;
 	Client find_client(vector<Client> DB, string name, string surname, string phonenumber);
-	void update_info(Client client, vector<Client>& DB, int index_in_db);
+	void update_info(Client client, vector<Client>& DB);
 	void change_name(string name) { client.name = name; }
 	void change_surname(string surname) { client.surname = surname; }
 	void change_phone_number(string phone_number) { client.phone_number = phone_number; }

@@ -15,10 +15,8 @@ Client ClientProfileEditor::find_client(vector<Client> DB, string name, string s
 	client.name = "0";
 	return client;
 }
-void ClientProfileEditor::update_info(Client client, vector<Client>& DB, int index_in_db) {
+void ClientProfileEditor::update_info(Client client, vector<Client>& DB) {
 	DB[index_in_db] = client;
-	cout << get_history_info(DB[index_in_db]);
-	cout << " The data has been successfully changed\n";
 }
 
 void ClientProfileEditor::change_history() {
