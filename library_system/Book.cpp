@@ -60,6 +60,11 @@ void Book::addBookingElement(Booking elem) {
 string Book::getBookInfo()
 {
 	string str = "Title: " + title + "\nAuthor: " + author + "\nYear: " + to_string(year) + "\nNumber pages: " + to_string(pages);
+	str += "\nBooking: ";
+	queue< Booking > _queue = bookingQueue;
+	while (!_queue.empty()) {
+		str += get_main_info(*_queue.front().client) + "\n";
+	}
 	return str;
 }
 
