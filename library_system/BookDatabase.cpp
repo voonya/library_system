@@ -60,9 +60,7 @@ void BookDatabase::editBook(Book* book, string newTitle, string newAuthor, int n
 
 void BookDatabase::bookTheBook(Book* book, Client* client){
 	Booking newBooking;
-	newBooking.client_name = client->name;
-	newBooking.client_surname = client->surname;
-	newBooking.phone_number = client->phone_number;
+	newBooking.client = client;
 	book->addBookingElement(newBooking);
 }
 

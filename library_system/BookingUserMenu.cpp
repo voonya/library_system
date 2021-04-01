@@ -13,7 +13,7 @@ int chooseBook(int count) {
 	return bookNumber;
 }
 
-vector<Client> choose_client(ClientDatabase& clientDB)
+vector<Client*> choose_client(ClientDatabase& clientDB)
 {
 	string name;
 	cout << " Name: ";
@@ -22,7 +22,7 @@ vector<Client> choose_client(ClientDatabase& clientDB)
 	string surname;
 	cout << " Surname: ";
 	getline(cin, surname);
-	vector<Client> clients = clientDB.findByNameAndSurname(name, surname);
+	vector<Client*> clients = clientDB.findByNameAndSurname(name, surname);
 	return clients;
 }
 
@@ -42,10 +42,10 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 		cout << "Before choosing the book to book, choose a client (1) or quit (2)" << endl;
 		int answer;
 		cin >> answer;
-		Client chosen;
+		Client* chosen;
 		if (answer == 1)
 		{
-			vector<Client> clients = choose_client(cDB);
+			vector<Client*> clients = choose_client(cDB);
 			if (clients.empty())
 			{
 				cout << "No clients found!" << endl;
@@ -61,9 +61,9 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 			else if (clients.size() > 1)
 			{
 				cout << "There are several such clients! Choose one (enter the order of the client starting from 1)" << endl;
-				for (Client client_it : clients)
+				for (Client* client_it : clients)
 				{
-					cout << get_main_info(client_it) + "\n------------" + "\n";
+					cout << get_main_info(*client_it) + "\n------------" + "\n";
 				}
 				int order;
 				cin >> order;
@@ -98,7 +98,7 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 			cout << "Your input: ";
 			cin >> number;
 			if (number == 1) {
-				bookingTheBook(DB, bookBooker, bookNumber - 1, &chosen);
+				bookingTheBook(DB, bookBooker, bookNumber - 1, chosen);
 			}
 		}
 	} else
@@ -132,7 +132,7 @@ void BookingUserMenu::showBookings(BookDatabase& DB)
 			number++;
 			Booking booking = booking_queue.front();
 			booking_queue.pop();
-			cout << number << ": booked by " << booking.client_name << " " << booking.client_surname << "(" << booking.phone_number << ")\n" ;
+			cout << number << ": booked by\n " << get_main_info(*booking.client) << endl ;
 		}
 }
 
