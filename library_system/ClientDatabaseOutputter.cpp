@@ -18,5 +18,5 @@ void ClientDatabaseOutputter::output_client_database()
 
 string ClientDatabaseOutputter::request_client_info(Client client)
 {
-	return get_main_info(client) + "\n------------" + "\n";
+	return get_main_info(client) + "\n" + get_more_info(client) + "\n Debts: " + get_debts_info(client) + "\n Reservation: " + get_reservation_info(client) + "\n History: " + get_history_info(client) + "\n------------" + "\n";
 }
