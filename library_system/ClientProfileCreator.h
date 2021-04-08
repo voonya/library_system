@@ -18,6 +18,5 @@ public:
 	void set_address(string a) { client.address = a; }
 	vector<string> get_debts_list() { return client.debts; }
 	vector<string> get_reservation_list() { return client.reservation; }
-	bool check_existing_client(vector<Client>* DB);
 	Client& get_client() { return client; }
 };

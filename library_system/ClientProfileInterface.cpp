@@ -81,15 +81,51 @@ void ClientProfileInterface::change_menu(vector<Client>* DB) {
 		}
 		else if (answer == "6") {
 			show_debts();
-			change_debts();
+			cout << "\n You want delete or add? (d/a): ";
+			string answer; getline(cin, answer);
+			if (answer == "d") {
+				cout << " What number to delete? ";
+				string n;
+				getline(cin, n);
+				change_debts("d", n);
+			}
+			else if (answer == "a") {
+				cout << " Enter what you want to add: ";
+				string str; getline(cin, str);
+				change_debts("a", str);
+			}
 		}
 		else if (answer == "7") {
 			show_reservation();
-			change_reservation();
+			cout << "\n You want delete or add? (d/a): ";
+			string answer; getline(cin, answer);
+			if (answer == "d") {
+				cout << " What number to delete? ";
+				string n;
+				getline(cin, n);
+				change_reservation("d", n);
+			}
+			else if (answer == "a") {
+				cout << " Enter what you want to add: ";
+				string str; getline(cin, str);
+				change_reservation("a", str);
+			}
 		}
 		else if (answer == "8") {
 			show_history();
-			change_history();
+			cout << "\n You want delete or add? (d/a): ";
+			string answer; getline(cin, answer);
+			if (answer == "d") {
+				cout << " What number to delete? ";
+				string n;
+				getline(cin, n);
+				change_history("d", n);
+			}
+			else if (answer == "a") {
+				cout << " Enter what you want to add: ";
+				string str; getline(cin, str);
+				change_history("a", str);
+			}
 		}
 		update_info(client, *DB);
 		cout << " The data has been successfully changed\n";
@@ -104,4 +140,21 @@ void ClientProfileInterface::show_info() {
 	cout << " Debts:\n"; show_debts();
 	cout << " Reservation:\n"; show_reservation(); //<< get_reservation_info(client);
 	cout << " History:\n"; show_history();//<< get_history_info(client);
+}
+
+void ClientProfileInterface::show_history() {
+	for (int i = 0; i < client.history.size(); i++) {
+		cout << "\t" << i + 1 << ") " << client.history[i] << "\n";
+	}
+}
+
+void ClientProfileInterface::show_debts() {
+	for (int i = 0; i < client.debts.size(); i++) {
+		cout << "\t" << i + 1 << ") " << client.debts[i] << "\n";
+	}
+}
+void ClientProfileInterface::show_reservation() {
+	for (int i = 0; i < client.reservation.size(); i++) {
+		cout << "\t" << i + 1 << ") " << client.reservation[i] << "\n";
+	}
 }

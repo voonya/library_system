@@ -19,52 +19,33 @@ void ClientProfileEditor::update_info(Client client, vector<Client>& DB) {
 	DB[index_in_db] = client;
 }
 
-void ClientProfileEditor::change_history() {
-	cout << "\n You want delete or add? (d/a): ";
-	string answer; getline(cin, answer);
-	if (answer == "d") {
-		int index;
-		cout << " What number to delete? "; cin >> index;
-		client.history.erase(client.history.begin() + index - 1);
-		cin.ignore();
+void ClientProfileEditor::change_history(string type, string changes) {
+	if (type == "d") {
+		cout << stoi(changes);
+		client.history.erase(client.history.begin() + stoi(changes) - 1);
 	}
-	else if (answer == "a") {
-		cout << " Enter what you want to add: ";
-		string str; getline(cin, str);
-		client.history.push_back(str);
+	else if (type == "a") {
+		client.history.push_back(changes);
 	}
 }
-void ClientProfileEditor::show_history() {
-	for (int i = 0; i < client.history.size(); i++) {
-		cout << "\t" << i + 1 << ") " << client.history[i] << "\n";
-	}
-}
-void ClientProfileEditor::change_debts() {
-	cout << "\n You want delete or add? (d/a): ";
-	string answer; getline(cin, answer);
-	if (answer == "d") {
-		int index;
-		cout << " What number to delete? "; cin >> index;
-		client.debts.erase(client.debts.begin() + index - 1);
-		cin.ignore();
-	}
-	else if (answer == "a") {
-		cout << " Enter what you want to add: ";
-		string str; getline(cin, str);
-		client.debts.push_back(str);
-	}
 
-}
-void ClientProfileEditor::show_debts() {
-	for (int i = 0; i < client.debts.size(); i++) {
-		cout << "\t" << i + 1 << ") " << client.debts[i] << "\n";
+void ClientProfileEditor::change_debts(string type, string changes) {
+	if (type == "d") {
+		client.debts.erase(client.debts.begin() + stoi(changes) - 1);
+	}
+	else if (type == "a") {
+		client.debts.push_back(changes);
 	}
 }
-void ClientProfileEditor::show_reservation() {
-	for (int i = 0; i < client.reservation.size(); i++) {
-		cout << "\t" << i + 1 << ") " << client.reservation[i] << "\n";
+void ClientProfileEditor::change_reservation(string type, string changes) {
+	if (type == "d") {
+		client.reservation.erase(client.reservation.begin() + stoi(changes) - 1);
+	}
+	else if (type == "a") {
+		client.reservation.push_back(changes);
 	}
 }
+/*
 void ClientProfileEditor::change_reservation() {
 	cout << "\n You want delete or add? (d/a): ";
 	string answer; getline(cin, answer);
@@ -81,3 +62,4 @@ void ClientProfileEditor::change_reservation() {
 	}
 
 }
+*/
