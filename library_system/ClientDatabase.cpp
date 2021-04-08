@@ -54,6 +54,13 @@ vector<Client*> ClientDatabase::findByNameAndSurname(string name, string surname
 	}
 	return response;
 }
+int ClientDatabase::findByNameAndSurnameAndPhone(string name, string surname, string phonenumber) {
+	for (int i = 0; i < clients.size(); i++) {
+		if (clients[i].name == name && clients[i].surname == surname && clients[i].phone_number == phonenumber)
+			return i;
+	}
+	return -1;
+}
 
 bool sorting_func_name(Client a, Client b)
 {

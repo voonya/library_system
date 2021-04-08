@@ -41,7 +41,7 @@ int main()
 		{
 		case 1:
 		{
-			clientRegistrationMenu.start_menu(DB_Clients.getAllClients());
+			clientRegistrationMenu.start_menu(&DB_Clients);
 			break;
 		}
 		case 2:
