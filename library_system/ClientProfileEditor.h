@@ -15,11 +15,8 @@ protected:
 	void change_date(int d, int m, int y) {
 		client.date_of_birth = Date(d,m,y); 
 	}
-	void show_history();
-	void change_history();
-	void show_debts();
-	void change_debts();
-	void show_reservation();
-	void change_reservation();
+	void change_history(string type, string changes);
+	void change_debts(string type, string changes);
+	void change_reservation(string type, string changes);
 };
 

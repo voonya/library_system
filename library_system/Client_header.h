@@ -40,4 +40,5 @@ public:
 	friend bool sorting_func_surname(Client a, Client b);
 	friend Client* findClient(vector<Client>& DB, string name, string surname);
 	friend class BookDatabase;
+	friend class ClientProfileInterface;
 };

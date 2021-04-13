@@ -33,7 +33,7 @@ void ClientRegestrationInterface::set_info() {
 	client.set_address(a);
 }
 
-void ClientRegestrationInterface::start_menu(vector<Client>* DB) {
+void ClientRegestrationInterface::start_menu(ClientDatabase* DB) {
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;
@@ -44,7 +44,7 @@ void ClientRegestrationInterface::start_menu(vector<Client>* DB) {
 
 
 
-void ClientRegestrationInterface::work_loop(string& answer, vector<Client>* DB) {
+void ClientRegestrationInterface::work_loop(string& answer, ClientDatabase* DB) {
 	while (answer != "q") {
 		if (answer == "s") {
 			set_info();
@@ -56,7 +56,30 @@ void ClientRegestrationInterface::work_loop(string& answer, vector<Client>* DB) 
 			getline(cin, answer);
 			cout << "\n---------------------------------------------------------------------------------\n";
 			if (answer == "y") {
-				client.add_new_client(DB);
+				int index = DB->findByNameAndSurnameAndPhone(client.get_name(), client.get_surname(), client.get_phone());
+				if (index == -1) {
+					DB->addClientToDatabase(client.get_client());
+					cout << "\n Adding new client was done\n";
+					cout << "\n---------------------------------------------------------------------------------\n";
+				}
+				else {
+					cout << "\n Database already has a client with theese name, surname and phonenumber:\n";
+					cout << get_main_info((*(DB->getAllClients()))[index]) << get_more_info((*(DB->getAllClients()))[index]);
+					cout << "\n---------------------------------------------------------------------------------\n";
+					cout << "\n Do you want to add this new client still? (y/n): ";
+					string answer;
+					getline(cin, answer);
+
+					if (answer == "y") {
+						DB->addClientToDatabase(client.get_client());
+						cout << "\n Adding new client was done\n";
+						cout << "\n---------------------------------------------------------------------------------\n";
+					}
+					else if (answer == "n") {
+						cout << "\n Adding new client was denied\n";
+						cout << "\n---------------------------------------------------------------------------------\n";
+					}
+				}
 				cout << "\n Do you want to add one more client?\n Enter 's' to go on and 'q' to quit:\n ";
 				getline(cin, answer);
 			}
