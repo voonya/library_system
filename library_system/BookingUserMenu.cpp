@@ -116,7 +116,7 @@ void BookingUserMenu::showBooks(BookDatabase& DB)
 	vector< Book > books = DB.getAllBooks();
 	for (int i = 0; i < books.size(); i++) {
 		string info = books[i].getBookInfo();
-		cout << "------- " << i + 1 << " -------";
+		cout << "------- " << i + 1 << " -------" << endl;
 		cout << info << endl;
 	}
 }

@@ -28,6 +28,8 @@ void BookDatabase::fake_init()
 	addBookToDatabase("To Kill a Mockingbird", "Harper Lee", 1960, 326, "");
 	addBookToDatabase("Robinson Crusoe", "Daniel Defoe", 1719, 382, "");
 	addBookToDatabase("Gone with the Wind", "Margaret Mitchell", 1936, 351, "");
+	addBookToDatabase("Text pex shmeks", "Vilyam Zinsser", 1976, 288, "");
+	addBookToDatabase("The Adventures of Tom Sawyer", "Mark Twain", 1876, 231, "");
 }
 
 void BookDatabase::addBookToDatabase(string title, string author, int year, int pages, string additionalInfo){
@@ -87,7 +89,7 @@ vector<Book> BookDatabase::findByTitle(string title){
 	return response;
 }
 
-vector<Book> BookDatabase::getAllBooks()
+vector<Book>& BookDatabase::getAllBooks()
 {
 	return books;
 }

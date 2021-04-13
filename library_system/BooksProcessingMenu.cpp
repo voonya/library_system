@@ -6,11 +6,11 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 	int number = 0;
 	while (number != 5) {
 		cout << "It's books propcessing menu\n";
-		cout << "To view books enter number '1'\n";
-		cout << "To add new book enter number '2'\n";
-		cout << "To edit existing book enter number '3'\n";
-		cout << "To remove existing book enter number '4'\n";
-		cout << "To exit from this menu enter number '5'\n";
+		cout << "1 - to view books enter number\n";
+		cout << "2 - to add new book enter number\n";
+		cout << "3 - to edit existing book enter number\n";
+		cout << "4 - to remove existing book enter number\n";
+		cout << "5 - to exit from this menu enter number\n";
 		cout << " Enter your answer: ";
 		cin >> number;
 		if (number == 1) {
@@ -46,37 +46,47 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 				int newPages = book.getPages(),
 					newYear = book.getYear();
 				int numb;
-				cout << " To edit title of book enter '1' else enter '2'\n";
+				cout << " 1 - to edit title of book\n";
+				cout << " 2 - skip\n";
 				cout << " Enter your answer: ";
 				cin >> numb;
+				cin.ignore();
 				if (numb == 1) {
 					cout << " Enter new title: ";
 					getline(cin, newTitle);
 				}
-				cout << " To edit author of book enter '1' else enter '2' \n";
+				cout << " 1 - to edit author of book\n";
+				cout << " 2 - skip\n";
 				cout << " Enter your answer: ";
 				cin >> numb;
+				cin.ignore();
 				if (numb == 1) {
 					cout << " Enter new author: ";
 					getline(cin, newAuthor);
 				}
-				cout << " To edit created year of book enter '1' else enter '2' \n";
+				cout << " 1 - to edit created year of book\n";
+				cout << " 2 - skip\n";
 				cout << " Enter your answer: ";
 				cin >> numb;
+				cin.ignore();
 				if (numb == 1) {
 					cout << " Enter new year: ";
 					cin >> newYear;
 				}
-				cout << " To edit number of pages of book enter '1' else enter '2' \n";
+				cout << " 1 - to edit number of pages of book\n";
+				cout << " 2 - skip\n";
 				cout << " Enter your answer: ";
 				cin >> numb;
+				cin.ignore();
 				if (numb == 1) {
 					cout << " Enter new number of pages: ";
 					cin >> newPages;
 				}
-				cout << " To edit additional infornation of book enter '1' else enter '2' \n";
+				cout << " 1 - to edit additional infornation of book\n";
+				cout << " 2 - skip\n";
 				cout << " Enter you answer: ";
 				cin >> numb;
+				cin.ignore();
 				if (numb == 1) {
 					cout << " Enter new additional information: ";
 					getline(cin, newAdditionalInfo);
@@ -101,8 +111,8 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 			}
 		}
 		if (number != 5) {
-			cout << " To continue work with this menu enter '1' \n";
-			cout << " To exit from this menu enter number '5'\n";
+			cout << " 1 - to continue work with this menu\n";
+			cout << " 5 - to exit from this menu enter number\n";
 			cout << " Enter your answer: ";
 			cin >> number;
 		}
@@ -114,7 +124,7 @@ void BooksProcessingMenu::showBooks(BookDatabase& DB)
 	vector< Book > books = DB.getAllBooks();
 	for (int i = 0; i < books.size(); i++) {
 		string info = books[i].getBookInfo();
-		cout << "------- " << i + 1 << " -------";
+		cout << "------- " << i + 1 << " -------" << endl;
 		cout << info << endl;
 	}
 }
@@ -126,10 +136,10 @@ void BooksProcessingMenu::addNewBook(BookDatabase& DB, string title, string auth
 
 void BooksProcessingMenu::editBook(BookDatabase& DB, int bookNumber, string newTitle, string newAuthor, int newYear, int newPages, string newAdditionalInfo)
 {
-	DB.editBook((&DB.getAllBooks()[bookNumber - 1]), newTitle, newAuthor, newYear, newPages, newAdditionalInfo);
+	DB.editBook(&(DB.getAllBooks()[bookNumber - 1]), newTitle, newAuthor, newYear, newPages, newAdditionalInfo);
 }
 
 void BooksProcessingMenu::removeBook(BookDatabase& DB, int bookNumber)
 {
-	DB.removeBookFromDatabase((&DB.getAllBooks()[bookNumber - 1]));
+	DB.removeBookFromDatabase(&(DB.getAllBooks()[bookNumber - 1]));
 }

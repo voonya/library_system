@@ -25,7 +25,7 @@ public:
 	void takeTheBook(Book* book, Client* client);
 	vector< Book > findByAuthor(string author);
 	vector< Book > findByTitle(string title);
-	vector< Book > getAllBooks();
+	vector< Book >& getAllBooks();
 	vector< Book > sortBooksByAuthor();
 	vector< Book > sortBooksByTitle();
 	vector< Book > sortBooksByYear();
