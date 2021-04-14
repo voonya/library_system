@@ -12,16 +12,26 @@ public:
 	Date() {};
 	Date(int d, int m, int y) : day(d), month(m), year(y) {};
 	string get_date();
+	friend class Human;
 	friend class Client;
 	friend class ClientProfileCreator;
 };
-
-class Client {
+class Human {
+protected:
 	string name;
 	string surname;
 	Date date_of_birth;
 	string phone_number;
 	string address;
+	string login;
+	string password;
+};
+class Client: protected Human {
+	//string name;
+	//string surname;
+	//Date date_of_birth;
+	//string phone_number;
+	//string address;
 	vector<string> debts;
 	vector<string> reservation;
 	vector<string> history;
@@ -38,7 +48,7 @@ public:
 	friend class ClientDatabase;
 	friend bool sorting_func_name(Client a, Client b);
 	friend bool sorting_func_surname(Client a, Client b);
-	friend Client* findClient(vector<Client>& DB, string name, string surname);
+	//friend Client* findClient(vector<Client>& DB, string name, string surname);
 	friend class BookDatabase;
 	friend class ClientProfileInterface;
 };

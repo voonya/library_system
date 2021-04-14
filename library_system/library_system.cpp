@@ -1,4 +1,5 @@
-﻿#include "ClientRegestrationInterface.h"
+﻿/*
+#include "ClientRegestrationInterface.h"
 #include "ClientProfileInterface.h"
 #include "BookCatalogueUI.h"
 #include "ClientCatalogueUI.h"
@@ -6,25 +7,27 @@
 
 #include "ClientDatabase.h"
 #include "BookingUserMenu.h"
-
+*/
+#include "Librarian.h"
 
 int main()
 {
+	/*
 	ClientRegestrationInterface clientRegistrationMenu;
 	ClientProfileInterface clientProfileMenu;
-	
+	*/
 	vector<Client> clientVector;
 	ClientDatabase DB_Clients(clientVector);
 	DB_Clients.fake_init();
-	ClientCatalogueUI client_ui(&DB_Clients);
+	//ClientCatalogueUI client_ui(&DB_Clients);
 	
 	vector<Book> bookVector;
 	BookDatabase book_database(bookVector);
 	book_database.fake_init();
-	book_catalogue_ui book_catalogue_ui(&book_database);
+	//book_catalogue_ui book_catalogue_ui(&book_database);
 
-	BookingUserMenu booking;
-	
+	//BookingUserMenu booking;
+	Librarian lib("Name","Name", "Phone");
 	bool running = true;
 	while (running)
 	{
@@ -41,32 +44,43 @@ int main()
 		{
 		case 1:
 		{
+			lib.register_client(&DB_Clients);
+			/*
 			clientRegistrationMenu.start_menu(&DB_Clients);
-			break;
+			break;*/
 		}
 		case 2:
 		{
+			lib.edit_client(&DB_Clients);
+			/*
 			clientProfileMenu.start_menu(DB_Clients.getAllClients());
-			break;
+			break;*/
 		}
 		case 3:
 		{
+			lib.show_book(&book_database);
+			/*
 			book_catalogue_ui.output_menu();
-			break;
+			break;*/
 		}
 		case 4:
 		{
+			lib.show_clients(&DB_Clients);
+			/*
 			client_ui.output_menu();
-			break;
+			break;*/
 		}
 		case 5:
 			{
+			lib.interact_book(&book_database, &DB_Clients);
+			/*
 			BookBooker booker;
 			booking.startDialogMenu(book_database, booker, DB_Clients);
-			break;
+			break;*/
 			}
 		case 6:
 		{
+			
 			running = false;
 			break;
 		}
