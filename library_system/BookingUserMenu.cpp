@@ -26,88 +26,147 @@ vector<Client*> choose_client(ClientDatabase& clientDB)
 	return clients;
 }
 
-
-
-void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB)
+void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB, Client* client)
 {
+	int choice = 0;
 	cout << "It's menu of booking books\n";
-	cout << "To see the bookings for a book enter 1, to book or take a book enter 2, to quit enter 3: ";
-	int choice;
-	cin >> choice;
-	if (choice == 1)
-	{
-		showBookings(DB);
-	}
-	else if (choice == 2) {
-		cout << "Before choosing the book to book or take, choose a client (1) or quit (2)" << endl;
-		int answer;
-		cin >> answer;
-		Client* chosen;
-		if (answer == 1)
+	while (choice != 3) {
+		cout << "1 - to see the bookings for a book\n";
+		cout << "2 - to book or take a book\n";
+		cout << "3 - to quit\n";
+		cout << "Enter your answer: ";
+		cin >> choice;
+		if (choice == 1)
 		{
-			vector<Client*> clients = choose_client(cDB);
-			if (clients.empty())
-			{
-				cout << "No clients found!" << endl;
-				cout << "Try again (1 - yes, 2 - no)?" << endl;
-				int choice;
-				cin >> choice;
-				if (choice == 1)
-				{
-					startDialogMenu(DB, bookBooker, cDB);
+			showBookings(DB);
+		}
+		else if (choice == 2) {
+			int number = 0;
+			cout << "1 - to view books\n";
+			cout << "2 - to exit from menu\n";
+			cout << "Enter your answer: ";
+			cin >> number;
+			if (number == 1) {
+				showBooks(DB);
+				cout << "1 - to choose book for booking or taking\n";
+				cout << "2 - to exit from menu\n";
+				cout << "Enter your answer: ";
+				cin >> number;
+				if (number == 2)
+					return;
+				int bookNumber = chooseBook(DB.getAllBooks().size());
+				cout << "Your chosen book is: " << bookNumber << endl;
+				cout << "1 - to book the chosen book\n";
+				cout << "2 - to take the chosen book\n";
+				cout << "3 - to exit from booking interface\n";
+				cout << "Enter your answer: ";
+				cin >> number;
+				if (number == 1) {
+					bookingTheBook(DB, bookBooker, bookNumber - 1, client);
+					cout << "You successfully booked the book!!!\n";
 				}
-				return;
-			}
-			else if (clients.size() > 1)
-			{
-				cout << "There are several such clients! Choose one (enter the order of the client starting from 1)" << endl;
-				for (Client* client_it : clients)
-				{
-					cout << get_main_info(*client_it) + "\n------------" + "\n";
+				if (number == 2) {
+					takingTheBook(DB, bookBooker, bookNumber - 1, client);
 				}
-				int order;
-				cin >> order;
-				chosen = clients[order];
-			} else
-			{
-				chosen = clients[0];
 			}
 		}
 		else
 		{
 			return;
 		}
+	}
+}
 
-		int number = 0;
-		cout << "To view books enter '1'\n";
-		cout << "To exit from menu enter '2'\n";
-		cout << "Your input: ";
-		cin >> number;
-		if (number == 1) {
-			showBooks(DB);
-			cout << "To choose book for enter '1'\n";
-			cout << "To exit from menu enter '2'\n";
-			cout << "Your input: ";
-			cin >> number;
-			if (number == 2)
+void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB)
+{
+	int choice = 0;
+	cout << "It's menu of booking books\n";
+	while (choice != 3) {
+		cout << "1 - to see the bookings for a book\n";
+		cout << "2 - to book or take a book\n";
+		cout << "3 - to quit\n";
+		cout << "Enter your answer: ";
+		cin >> choice;
+		if (choice == 1)
+		{
+			showBookings(DB);
+		}
+		else if (choice == 2) {
+			cout << "1 - choose a client before choosing the book to book or take\n";
+			cout << "2 - to quit\n";
+			cout << "Enter you answer: ";
+			int answer;
+			cin >> answer;
+			Client* chosen;
+			if (answer == 1)
+			{
+				vector<Client*> clients = choose_client(cDB);
+				if (clients.empty())
+				{
+					cout << "No clients found!" << endl;
+					cout << "Try again (1 - yes, 2 - no)?" << endl;
+					int choice;
+					cin >> choice;
+					if (choice == 1)
+					{
+						startDialogMenu(DB, bookBooker, cDB);
+					}
+					return;
+				}
+				else if (clients.size() > 1)
+				{
+					cout << "There are several such clients! Choose one (enter the order of the client starting from 1)" << endl;
+					for (Client* client_it : clients)
+					{
+						cout << get_main_info(*client_it) + "\n------------" + "\n";
+					}
+					int order;
+					cin >> order;
+					chosen = clients[order];
+				}
+				else
+				{
+					chosen = clients[0];
+				}
+			}
+			else
+			{
 				return;
-			int bookNumber = chooseBook(DB.getAllBooks().size());
-			cout << "Your chosen book is: " << bookNumber << endl;
-			cout << "To book the chosen book enter '1'\n";
-			cout << "To take the chosen book enter '2'\n";
-			cout << "To exit from booking interface enter '3'\n";
-			cout << "Your input: ";
+			}
+
+			int number = 0;
+			cout << "1 - to view books\n";
+			cout << "2 - to exit from menu\n";
+			cout << "Enter your answer: ";
 			cin >> number;
 			if (number == 1) {
-				bookingTheBook(DB, bookBooker, bookNumber - 1, chosen);
-			}
-			if (number == 2) {
-				takingTheBook(DB, bookBooker, bookNumber - 1, chosen);
+				showBooks(DB);
+				cout << "1 - to choose book for booking\n";
+				cout << "2 - to exit from menu\n";
+				cout << "Enter your answer: ";
+				cin >> number;
+				if (number == 2)
+					return;
+				int bookNumber = chooseBook(DB.getAllBooks().size());
+				cout << "Your chosen book is: " << bookNumber << endl;
+				cout << "1 - to book the chosen book\n";
+				cout << "2 - to take the chosen book\n";
+				cout << "3 - to exit from booking interface\n";
+				cout << "Enter your answer: ";
+				cin >> number;
+				if (number == 1) {
+					bookingTheBook(DB, bookBooker, bookNumber - 1, chosen);
+					cout << "You successfully booked the book!!!\n";
+				}
+				if (number == 2) {
+					takingTheBook(DB, bookBooker, bookNumber - 1, chosen);
+				}
 			}
 		}
-	} else
-	{
-		return;
+		else
+		{
+			return;
+		}
 	}
 }
 

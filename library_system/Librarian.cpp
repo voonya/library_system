@@ -14,7 +14,7 @@ string get_more_info(Librarian c) {
 	return info;
 }
 
-string get_main_info(Client c) {
-	string info = " Name: " + c.name + "\n Surname: " + c.surname;
-	return info;
-}
+//string get_main_info(Client c) {
+//	string info = " Name: " + c.name + "\n Surname: " + c.surname;
+//	return info;
+//}
