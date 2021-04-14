@@ -3,7 +3,7 @@
 
 
 int chooseBook(int count) {
-	cout << " To choose some book for booking enter book number: ";
+	cout << " To choose some book enter book number(" << 1 << "..." << count << "): ";
 	int bookNumber = -1;
 	cin >> bookNumber;
 	while (bookNumber > count || bookNumber <= 0) {
@@ -31,7 +31,7 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBoo
 	int choice = 0;
 	cout << "It's menu of booking books\n";
 	while (choice != 3) {
-		cout << "1 - to see the bookings for a book\n";
+		cout << "1 - to see the books for a booking\n";
 		cout << "2 - to book or take a book\n";
 		cout << "3 - to quit\n";
 		cout << "Enter your answer: ";
@@ -69,6 +69,9 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBoo
 					takingTheBook(DB, bookBooker, bookNumber - 1, client);
 				}
 			}
+			else{
+				return;
+			}
 		}
 		else
 		{
@@ -82,7 +85,7 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 	int choice = 0;
 	cout << "It's menu of booking books\n";
 	while (choice != 3) {
-		cout << "1 - to see the bookings for a book\n";
+		cout << "1 - to see the books for a booking\n";
 		cout << "2 - to book or take a book\n";
 		cout << "3 - to quit\n";
 		cout << "Enter your answer: ";
@@ -162,6 +165,9 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 					takingTheBook(DB, bookBooker, bookNumber - 1, chosen);
 				}
 			}
+			else {
+				return;
+			}
 		}
 		else
 		{
@@ -182,11 +188,11 @@ void BookingUserMenu::showBooks(BookDatabase& DB)
 
 void BookingUserMenu::showBookings(BookDatabase& DB)
 {
-	cout << "Select a book:" << endl;
+	cout << "Select a book from list:";
 	showBooks(DB);
 	int bookNumber = chooseBook(DB.getAllBooks().size());
 	cout << "Your choosen book is: " << bookNumber << endl;
-	cout << "The bookings for the book are:" << endl;
+	cout << "The bookings for the book are:\n";
 	Book book = DB.getAllBooks()[bookNumber - 1];
 		auto booking_queue = book.getBookingQueue();
 		int number = 0;
