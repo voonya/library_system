@@ -110,6 +110,7 @@
     <ClCompile Include="ClientProfileEditor.cpp" />
     <ClCompile Include="ClientRegestrationInterface.cpp" />
     <ClCompile Include="Librarian.cpp" />
+    <ClCompile Include="LibrarianDatabase.cpp" />
     <ClCompile Include="library_system.cpp" />
     <ClCompile Include="ClientProfileInterface.cpp" />
     <ClCompile Include="ClientProfileCreator.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="ClientProfileCreator.h" />
     <ClInclude Include="BooksProcessingMenu.h" />
     <ClInclude Include="Librarian.h" />
+    <ClInclude Include="LibrarianDatabase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
