@@ -16,22 +16,13 @@ public:
 	friend class Client;
 	friend class ClientProfileCreator;
 };
-class Human {
-protected:
+
+class Client {
 	string name;
 	string surname;
 	Date date_of_birth;
 	string phone_number;
 	string address;
-	string login;
-	string password;
-};
-class Client: protected Human {
-	//string name;
-	//string surname;
-	//Date date_of_birth;
-	//string phone_number;
-	//string address;
 	vector<string> debts;
 	vector<string> reservation;
 	vector<string> history;

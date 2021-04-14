@@ -15,6 +15,7 @@ class Librarian
 	string phone_number;
 public:
 	Librarian(string name, string surname, string phone);
+	void start_menu(ClientDatabase* DB, BookDatabase* DB_B);
 	void register_client(ClientDatabase* DB);
 	void edit_client(ClientDatabase* DB);
 	void interact_book(BookDatabase* DB,ClientDatabase* DB_C);
