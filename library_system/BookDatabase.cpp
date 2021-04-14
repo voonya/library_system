@@ -103,19 +103,19 @@ vector<Book> BookDatabase::sortBooksByAuthor()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), authorComparator);
-	return books;
+	return new_books;
 }
 
 vector<Book> BookDatabase::sortBooksByTitle()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), titleComparator);
-	return books;
+	return new_books;
 }
 
 vector<Book> BookDatabase::sortBooksByYear()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), yearComparator);
-	return books;
+	return new_books;
 }
