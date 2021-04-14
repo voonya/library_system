@@ -1,14 +1,6 @@
-﻿/*
-#include "ClientRegestrationInterface.h"
-#include "ClientProfileInterface.h"
-#include "BookCatalogueUI.h"
-#include "ClientCatalogueUI.h"
-#include <iostream>
-
-#include "ClientDatabase.h"
-#include "BookingUserMenu.h"
-*/
+﻿
 #include "Librarian.h"
+#include "User.h"
 
 int main()
 {
@@ -27,7 +19,8 @@ int main()
 	//book_catalogue_ui book_catalogue_ui(&book_database);
 
 	//BookingUserMenu booking;
-	Librarian lib("Name","Name", "Phone");
+	Librarian lib("Name","Name", "Phone"); 
+	User user(&(*DB_Clients.getAllClients())[1]);
 	bool running = true;
 	while (running)
 	{
@@ -44,21 +37,23 @@ int main()
 		{
 		case 1:
 		{
-			lib.register_client(&DB_Clients);
+			//lib.register_client(&DB_Clients);
+			//user.show_info();
 			/*
 			clientRegistrationMenu.start_menu(&DB_Clients);
 			break;*/
 		}
 		case 2:
 		{
-			lib.edit_client(&DB_Clients);
+			//lib.edit_client(&DB_Clients);
 			/*
 			clientProfileMenu.start_menu(DB_Clients.getAllClients());
 			break;*/
 		}
 		case 3:
 		{
-			lib.show_book(&book_database);
+			//user.show_book(&book_database);
+			//lib.show_book(&book_database);
 			/*
 			book_catalogue_ui.output_menu();
 			break;*/

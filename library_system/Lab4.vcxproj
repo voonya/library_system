@@ -117,6 +117,7 @@
     <ClCompile Include="BookingUserMenu.cpp" />
     <ClCompile Include="BookBooker.cpp" />
     <ClCompile Include="BooksProcessingMenu.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
@@ -138,6 +139,7 @@
     <ClInclude Include="BooksProcessingMenu.h" />
     <ClInclude Include="Librarian.h" />
     <ClInclude Include="LibrarianDatabase.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
