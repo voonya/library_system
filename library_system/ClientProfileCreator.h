@@ -16,6 +16,7 @@ public:
 	void set_surname(string s) { client.surname = s; }
 	void set_phone_number(string n) { client.phone_number = n; }
 	void set_address(string a) { client.address = a; }
+	vector<int> convert_to_date(char line[]);
 	vector<string> get_debts_list() { return client.debts; }
 	vector<string> get_reservation_list() { return client.reservation; }
 	Client& get_client() { return client; }

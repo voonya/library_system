@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "ClientRegestrationInterface.h"
 #include <iostream>
 
@@ -14,15 +15,24 @@ void ClientRegestrationInterface::set_info() {
 	getline(cin, a);
 	client.set_surname(a);
 	//setting a date of birth of client
-	cout << " Date of birth (in format 1.1.2000): ";
-	getline(cin, a);
-	int d, m, y;
-	d = stoi(a.substr(0, a.find("."))); // day
-	a.erase(0, a.find(".") + 1);
-	m = stoi(a.substr(0, a.find("."))); // month
-	a.erase(0, a.find(".") + 1);
-	y = stoi(a); // year
-	client.set_date_birth(d, m, y);
+	vector<int> date;
+	bool flag = false;
+	while (!flag) {
+		date.clear();
+		char line[150];
+		cout << " Date of birth (in format 1.1.2000): ";
+		cin.getline(line, 150);
+		date = client.convert_to_date(line);
+		if (date.size() != 3) {
+			flag = false;
+			cout << " Incorrect type. Try again.\n";
+		}
+		else {
+			flag = true;
+		}
+	}
+	client.set_date_birth(date[0], date[1], date[2]);
+	
 	// setting phone number
 	cout << " Phonenumber: ";
 	getline(cin, a);
