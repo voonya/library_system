@@ -29,21 +29,21 @@ string get_main_info(Client c) {
 string get_debts_info(Client c) {
 	string str = "\n\t";
 	for (int i = 0; i < c.debts.size(); i++) {
-		str += c.debts[i] + ";\n";
+		str += c.debts[i] + ";\n\t";
 	}
 	return str;
 }
 string get_reservation_info(Client c) {
 	string str = "\n\t";
 	for (int i = 0; i < c.reservation.size(); i++) {
-		str += c.reservation[i] + ";\n";
+		str += c.reservation[i] + ";\n\t";
 	}
 	return str;
 }
 string get_history_info(Client c) {
 	string str = "\n\t";
 	for (int i = 0; i < c.history.size(); i++) {
-		str += c.history[i] + ";\n";
+		str += c.history[i] + ";\n\t";
 	}
 	return str;
 }
