@@ -64,6 +64,7 @@ string Book::getBookInfo()
 	queue< Booking > _queue = bookingQueue;
 	while (!_queue.empty()) {
 		str += get_main_info(*_queue.front().client) + "\n";
+		_queue.pop();
 	}
 	return str;
 }
