@@ -25,10 +25,10 @@ void Librarian::show_book(BookDatabase* DB) {
 	book_catalogue_ui menu(DB);
 	menu.output_menu();
 }
-void Librarian::interact_book(BookDatabase* DB, ClientDatabase* DB_C) {
+void Librarian::interact_book(BookDatabase DB, ClientDatabase DB_C) {
 	BookingUserMenu booking;
 	BookBooker booker;
-	booking.startDialogMenu(*DB, booker, *DB_C);
+	booking.startDialogMenu(DB, booker, DB_C);
 }
 void Librarian::show_clients(ClientDatabase* DB) {
 	ClientCatalogueUI client_ui(DB);
@@ -71,7 +71,7 @@ void Librarian::start_menu(ClientDatabase* DB, BookDatabase* DB_B) {
 		}
 		case 5:
 		{
-			interact_book(DB_B, DB);
+			interact_book(*DB_B, *DB);
 			break;
 		}
 		case 6:

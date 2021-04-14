@@ -8,7 +8,11 @@ void User::show_info() {
 	ClientProfileInterface menu;
 	menu.show_info(*client);
 }
-void User::start_menu(BookDatabase* DB) {
+void User::booking_menu(BookDatabase DB, BookBooker booker) {
+	BookingUserMenu menu;
+	menu.showBookingsMenuUser(DB, booker, client);
+}
+void User::start_menu(BookDatabase DB) {
 	bool running = true;
 	while (running)
 	{
@@ -28,11 +32,14 @@ void User::start_menu(BookDatabase* DB) {
 		}
 		case 2:
 		{
-			show_book(DB);
+			show_book(&DB);
 			break;
 		}
 		case 3:
 		{
+			BookBooker booker;
+			booking_menu(DB, booker);
+			break;
 			/*
 			show_book(DB_B);
 			break;*/

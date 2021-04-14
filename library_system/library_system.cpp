@@ -22,6 +22,7 @@ int main()
 	Librarian lib("Name","Name", "Phone"); 
 	User user(&(*DB_Clients.getAllClients())[1]);
 	lib.start_menu(&DB_Clients, &book_database);
+	//user.start_menu(book_database);
 	return 0;
 }
 /*

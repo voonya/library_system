@@ -26,7 +26,7 @@ vector<Client*> choose_client(ClientDatabase& clientDB)
 	return clients;
 }
 
-void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB, Client* client)
+void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBooker, Client* client)
 {
 	int choice = 0;
 	cout << "It's menu of booking books\n";

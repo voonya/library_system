@@ -16,7 +16,7 @@ class Librarian
 
 	void register_client(ClientDatabase* DB);
 	void edit_client(ClientDatabase* DB);
-	void interact_book(BookDatabase* DB, ClientDatabase* DB_C);
+	void interact_book(BookDatabase DB, ClientDatabase DB_C);
 	void show_clients(ClientDatabase* DB);
 	void show_book(BookDatabase* DB);
 public:
