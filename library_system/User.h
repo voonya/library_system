@@ -7,9 +7,10 @@ using namespace std;
 class User
 {
 	Client* client;
-public:
-	User(Client* client) : client(client) {};
 	void show_book(BookDatabase* DB);
 	void show_info();
+public:
+	User(Client* client) : client(client) {};
+	void start_menu(BookDatabase* DB);
 };
 
