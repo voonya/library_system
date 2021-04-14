@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "ClientProfileEditor.h"
 
 
@@ -44,6 +45,17 @@ void ClientProfileEditor::change_reservation(string type, string changes) {
 	else if (type == "a") {
 		client.reservation.push_back(changes);
 	}
+}
+vector<int> ClientProfileEditor::convert_to_date(char line[]) {
+	vector<int> date;
+	char sep[] = ".";
+	char* pos = strtok(line, sep);
+	while (pos != NULL) {
+		char word_c[100];
+		date.push_back(stoi(pos));
+		pos = strtok(NULL, sep);
+	}
+	return date;
 }
 /*
 void ClientProfileEditor::change_reservation() {

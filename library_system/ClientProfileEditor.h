@@ -18,5 +18,6 @@ protected:
 	void change_history(string type, string changes);
 	void change_debts(string type, string changes);
 	void change_reservation(string type, string changes);
+	vector <int> convert_to_date(char line[]);
 };
 

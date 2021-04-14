@@ -64,15 +64,23 @@ void ClientProfileInterface::change_menu(vector<Client>* DB) {
 			change_phone_number(n);
 		}
 		else if (answer == "4") {
-			cout << " Input new date of birth (format 1.1.2000): ";
-			string n; getline(cin, n);
-			int d, m, y;
-			d = stoi(n.substr(0, n.find("."))); // day
-			n.erase(0, n.find(".") + 1);
-			m = stoi(n.substr(0, n.find("."))); // month
-			n.erase(0, n.find(".") + 1);
-			y = stoi(n);
-			change_date(d,m,y);
+			vector<int> date;
+			bool flag = false;
+			while (!flag) {
+				date.clear();
+				char line[150];
+				cout << " Date of birth (in format 1.1.2000): ";
+				cin.getline(line, 150);
+				date = convert_to_date(line);
+				if (date.size() != 3) {
+					flag = false;
+					cout << " Incorrect type. Try again.\n";
+				}
+				else {
+					flag = true;
+				}
+			}
+			change_date(date[0],date[1],date[2]);
 		}
 		else if (answer == "5") {
 			cout << " Input new address: ";
@@ -126,6 +134,9 @@ void ClientProfileInterface::change_menu(vector<Client>* DB) {
 				string str; getline(cin, str);
 				change_history("a", str);
 			}
+		}
+		else {
+			break;
 		}
 		update_info(client, *DB);
 		cout << " The data has been successfully changed\n";
