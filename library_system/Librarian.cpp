@@ -82,14 +82,3 @@ void Librarian::start_menu(ClientDatabase* DB, BookDatabase* DB_B) {
 		}
 	}
 }
-/*
-string get_main_info(Client c) {
-	string info = " Name: " + c.name + "\n Surname: " + c.surname;
-	return info;
-}
-void register_client();
-	void edit_client();
-	void interact_book();
-	void show_clients();
-	
-*/
