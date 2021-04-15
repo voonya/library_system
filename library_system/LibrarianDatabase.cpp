@@ -1,5 +1,4 @@
 #include "LibrarianDatabase.h"
-#include "ClientDatabase.h"
 #include <vector>
 #include <string>
 
@@ -15,9 +14,9 @@ LibrarianDatabase::LibrarianDatabase(std::vector<Librarian> librarians)
 
 void LibrarianDatabase::fake_init()
 {
-	Librarian librarian1("Vitya", "Petrenko", "+3809944343");
-	Librarian librarian2("Lia", "Mars", "+3809942343");
-	Librarian librarian3("Irina", "Mukha", "+38099412343");
+	Librarian librarian1("Vitya", "Petrenko", "+3809944343", "vasya", "1234");
+	Librarian librarian2("Lia", "Mars", "+3809942343", "helloworld", "qwerty");
+	Librarian librarian3("Irina", "Mukha", "+38099412343", "qu", "123");
 	addLibrarianToDatabase(librarian1);
 	addLibrarianToDatabase(librarian2);
 	addLibrarianToDatabase(librarian3);
@@ -69,6 +68,11 @@ bool sorting_func_surname_l(Librarian a, Librarian b)
 vector<Librarian>* LibrarianDatabase::getAllLibrarians()
 {
 	return &librarians;
+}
+
+Librarian* LibrarianDatabase::getLibrarianByIndex(int index)
+{
+	return &librarians[index];
 }
 
 vector< Librarian > LibrarianDatabase::sort_by_name()

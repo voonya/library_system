@@ -17,5 +17,6 @@ public:
 	vector< Client >* getAllClients();
 	vector< Client > sort_by_surname();
 	vector< Client > sort_by_name();
+	Client* getClientByIndex(int index);
 };
 

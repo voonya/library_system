@@ -1,88 +1,86 @@
 ﻿
 #include "Librarian.h"
+#include "LibrarianDatabase.h"
+#include "LoginForm.h"
 #include "User.h"
 
 int main()
 {
-	/*
-	ClientRegestrationInterface clientRegistrationMenu;
-	ClientProfileInterface clientProfileMenu;
-	*/
+	
 	vector<Client> clientVector;
 	ClientDatabase DB_Clients(clientVector);
 	DB_Clients.fake_init();
-	//ClientCatalogueUI client_ui(&DB_Clients);
+
 	
 	vector<Book> bookVector;
 	BookDatabase book_database(bookVector);
 	book_database.fake_init();
-	//book_catalogue_ui book_catalogue_ui(&book_database);
+	
+	vector<Librarian> librarianVector;
+	LibrarianDatabase librarianDatabase(librarianVector);
+	librarianDatabase.fake_init();
 
-	//BookingUserMenu booking;
-	Librarian lib("Name","Name", "Phone"); 
-	User user(&(*DB_Clients.getAllClients())[1]);
-	lib.start_menu(&DB_Clients, &book_database);
-	//user.start_menu(book_database);
-	return 0;
-}
-/*
-bool running = true;
-while (running)
-{
-	cout << "Choose a menu:" << endl <<
-		"1 - register a client" << endl <<
-		"2 - edit a client profile" << endl <<
-		"3 - open the book catalogue" << endl <<
-		"4 - open the client catalogue" << endl <<
-		"5 - open the menu to book or take the book" << endl <<
-		"6 - quit the app" << endl;
-	int choice;
-	cin >> choice;
-	switch (choice)
+	int tryAgain = true;
+	while (tryAgain)
+	{
+		tryAgain = false;
+	cout << "Do you want to register or log in (1/2):" << endl;
+	int answer;
+	cin >> answer;
+	switch (answer)
 	{
 	case 1:
 	{
-		//lib.register_client(&DB_Clients);
-		//user.show_info();
-		
-		clientRegistrationMenu.start_menu(&DB_Clients);
+		ClientRegestrationInterface reg;
+		reg.start_menu(&DB_Clients);
+		tryAgain = true;
 		break;
 	}
-	case 2:
+	default:
 	{
-		//lib.edit_client(&DB_Clients);
-		
-		clientProfileMenu.start_menu(DB_Clients.getAllClients());
-		break;
+		LoginForm login;
+		int typeOfUser = login.askUserType();
+		// client
+		bool found = false;
+		while (!found)
+		{
+			cout << "To log in - 1, to return and choose between registration and log in - 2" << endl;
+			int answer1;
+			cin >> answer1;
+			if (answer1 == 2)
+			{
+				tryAgain = true;
+				break;
+			}
+			if (typeOfUser == 1)
+			{
+				int userIndex = login.getUserIndex(DB_Clients, found);
+				if (!found)
+				{
+					continue;
+				}
+				Client* client = DB_Clients.getClientByIndex(userIndex);
+				User user(client);
+				user.start_menu(&book_database, &DB_Clients);
+			}
+			// librarian
+			else
+			{
+				int librarianIndex = login.getLibrarianIndex(librarianDatabase, found);
+				if (!found)
+				{
+					continue;
+				}
+				Librarian* librarian = librarianDatabase.getLibrarianByIndex(librarianIndex);
+				librarian->start_menu(&DB_Clients, &book_database);
+			}
+		}
 	}
-	case 3:
-	{
-		//user.show_book(&book_database);
-		//lib.show_book(&book_database);
-		
-		book_catalogue_ui.output_menu();
-		break;
-	}
-	case 4:
-	{
-		lib.show_clients(&DB_Clients);
-		
-		client_ui.output_menu();
-		break;
-	}
-	case 5:
-	{
-		lib.interact_book(&book_database, &DB_Clients);
-		
-		BookBooker booker;
-		booking.startDialogMenu(book_database, booker, DB_Clients);
-		break;
-	}
-	case 6:
-	{
-
-		running = false;
-		break;
 	}
 	}
-}*/
+	
+	
+	
+	//lib.start_menu(&DB_Clients, &book_database);
+	return 0;
+}

@@ -15,6 +15,10 @@ void ClientDatabaseOutputter::output_client_database()
 		cout << request_client_info(client);
 	}
 }
+void ClientDatabaseOutputter::output_client(Client client)
+{
+	cout << request_client_info(client) << "\n";
+}
 
 string ClientDatabaseOutputter::request_client_info(Client client)
 {

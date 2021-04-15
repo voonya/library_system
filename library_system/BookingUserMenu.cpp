@@ -26,7 +26,7 @@ vector<Client*> choose_client(ClientDatabase& clientDB)
 	return clients;
 }
 
-void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBooker, Client* client)
+void BookingUserMenu::showBookingsMenuUser(BookDatabase* DB, BookBooker& bookBooker, Client* client)
 {
 	int choice = 0;
 	cout << "It's menu of booking books\n";
@@ -38,7 +38,7 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBoo
 		cin >> choice;
 		if (choice == 1)
 		{
-			showBookings(DB);
+			showBookings(*DB);
 		}
 		else if (choice == 2) {
 			int number = 0;
@@ -47,14 +47,14 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBoo
 			cout << "Enter your answer: ";
 			cin >> number;
 			if (number == 1) {
-				showBooks(DB);
+				showBooks(*DB);
 				cout << "1 - to choose book for booking or taking\n";
 				cout << "2 - to exit from menu\n";
 				cout << "Enter your answer: ";
 				cin >> number;
 				if (number == 2)
 					return;
-				int bookNumber = chooseBook(DB.getAllBooks().size());
+				int bookNumber = chooseBook(DB->getAllBooks().size());
 				cout << "Your chosen book is: " << bookNumber << endl;
 				cout << "1 - to book the chosen book\n";
 				cout << "2 - to take the chosen book\n";
@@ -62,11 +62,11 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBoo
 				cout << "Enter your answer: ";
 				cin >> number;
 				if (number == 1) {
-					bookingTheBook(DB, bookBooker, bookNumber - 1, client);
+					bookingTheBook(*DB, bookBooker, bookNumber - 1, client);
 					cout << "You successfully booked the book!!!\n";
 				}
 				if (number == 2) {
-					takingTheBook(DB, bookBooker, bookNumber - 1, client);
+					takingTheBook(*DB, bookBooker, bookNumber - 1, client);
 				}
 			}
 			else{

@@ -8,6 +8,12 @@ void ClientRegestrationInterface::set_info() {
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n Nice. To create a new client`s profile you need to input some info about client\n";
 	cout << "\n---------------------------------------------------------------------------------\n";
+	cout << " Login: ";
+	getline(cin, a);
+	client.set_login(a);
+	cout << " Password: ";
+	getline(cin, a);
+	client.set_password(a);
 	cout << " Name: ";
 	getline(cin, a);
 	client.set_name(a);
@@ -15,6 +21,7 @@ void ClientRegestrationInterface::set_info() {
 	getline(cin, a);
 	client.set_surname(a);
 	//setting a date of birth of client
+
 	vector<int> date;
 	bool flag = false;
 	while (!flag) {
