@@ -47,3 +47,5 @@ string get_history_info(Client c) {
 	}
 	return str;
 }
+
+

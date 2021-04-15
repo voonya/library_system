@@ -152,6 +152,12 @@ void ClientProfileInterface::show_info() {
 	cout << " Reservation:\n"; show_reservation(); //<< get_reservation_info(client);
 	cout << " History:\n"; show_history();//<< get_history_info(client);
 }
+void ClientProfileInterface::show_info(Client client) {
+	cout << get_main_info(client) << "\n" << get_more_info(client);
+	cout << " Debts:\n"; show_debts();
+	cout << " Reservation:\n"; show_reservation(); //<< get_reservation_info(client);
+	cout << " History:\n"; show_history();//<< get_history_info(client);
+}
 
 void ClientProfileInterface::show_history() {
 	for (int i = 0; i < client.history.size(); i++) {

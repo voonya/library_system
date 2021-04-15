@@ -72,6 +72,9 @@
     <ClCompile Include="LibrarianDatabase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h">
@@ -131,5 +134,11 @@
     <ClInclude Include="LibrarianDatabase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="User.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+>>>>>>> 2f35ff9cdb69ca68e7413f9e22b09456b17411b4
   </ItemGroup>
 </Project>
