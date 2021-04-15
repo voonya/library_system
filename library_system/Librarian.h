@@ -13,12 +13,13 @@ class Librarian
 	string name;
 	string surname;
 	string phone_number;
-
-	void register_client(ClientDatabase* DB);
-	void edit_client(ClientDatabase* DB);
-	void interact_book(BookDatabase DB, ClientDatabase DB_C);
-	void show_clients(ClientDatabase* DB);
-	void show_book(BookDatabase* DB);
+	ClientDatabase* DB_C;
+	BookDatabase* DB;
+	void register_client();
+	void edit_client();
+	void interact_book();
+	void show_clients();
+	void show_book();
 public:
 	Librarian(string name, string surname, string phone);
 	void start_menu(ClientDatabase* DB, BookDatabase* DB_B);

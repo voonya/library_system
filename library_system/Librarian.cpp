@@ -13,28 +13,30 @@ string get_more_info(Librarian c) {
 	string info = " Phonenumber: " + c.phone_number;
 	return info;
 }
-void Librarian::register_client(ClientDatabase* DB) {
+void Librarian::register_client() {
 	ClientRegestrationInterface menu;
-	menu.start_menu(DB);
+	menu.start_menu(DB_C);
 }
-void Librarian::edit_client(ClientDatabase* DB) {
+void Librarian::edit_client() {
 	ClientProfileInterface menu;
-	menu.start_menu(DB->getAllClients());
+	menu.start_menu(DB_C->getAllClients());
 }
-void Librarian::show_book(BookDatabase* DB) {
+void Librarian::show_book() {
 	book_catalogue_ui menu(DB);
 	menu.output_menu();
 }
-void Librarian::interact_book(BookDatabase DB, ClientDatabase DB_C) {
+void Librarian::interact_book() {
 	BookingUserMenu booking;
 	BookBooker booker;
-	booking.startDialogMenu(DB, booker, DB_C);
+	booking.startDialogMenu(*DB, booker, *DB_C);
 }
-void Librarian::show_clients(ClientDatabase* DB) {
-	ClientCatalogueUI client_ui(DB);
+void Librarian::show_clients() {
+	ClientCatalogueUI client_ui(DB_C);
 	client_ui.output_menu();
 }
-void Librarian::start_menu(ClientDatabase* DB, BookDatabase* DB_B) {
+void Librarian::start_menu(ClientDatabase* DB_Cl, BookDatabase* DB_B) {
+	DB = DB_B;
+	DB_C = DB_Cl;
 	bool running = true;
 	while (running)
 	{
@@ -51,27 +53,27 @@ void Librarian::start_menu(ClientDatabase* DB, BookDatabase* DB_B) {
 		{
 		case 1:
 		{
-			register_client(DB);
+			register_client();
 			break;
 		}
 		case 2:
 		{
-			edit_client(DB);
+			edit_client();
 			break;
 		}
 		case 3:
 		{
-			show_book(DB_B);
+			show_book();
 			break;
 		}
 		case 4:
 		{
-			show_clients(DB);
+			show_clients();
 			break;
 		}
 		case 5:
 		{
-			interact_book(*DB_B, *DB);
+			interact_book();
 			break;
 		}
 		case 6:
