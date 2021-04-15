@@ -26,20 +26,12 @@ vector<Client*> choose_client(ClientDatabase& clientDB)
 	return clients;
 }
 
-<<<<<<< HEAD
-void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB, Client* client)
-=======
 void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBooker, Client* client)
->>>>>>> 2f35ff9cdb69ca68e7413f9e22b09456b17411b4
 {
 	int choice = 0;
 	cout << "It's menu of booking books\n";
 	while (choice != 3) {
-<<<<<<< HEAD
 		cout << "1 - to see the books for a booking\n";
-=======
-		cout << "1 - to see the bookings for a book\n";
->>>>>>> 2f35ff9cdb69ca68e7413f9e22b09456b17411b4
 		cout << "2 - to book or take a book\n";
 		cout << "3 - to quit\n";
 		cout << "Enter your answer: ";
@@ -76,12 +68,9 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase& DB, BookBooker& bookBoo
 				if (number == 2) {
 					takingTheBook(DB, bookBooker, bookNumber - 1, client);
 				}
-<<<<<<< HEAD
 			}
 			else{
 				return;
-=======
->>>>>>> 2f35ff9cdb69ca68e7413f9e22b09456b17411b4
 			}
 		}
 		else
@@ -96,11 +85,7 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 	int choice = 0;
 	cout << "It's menu of booking books\n";
 	while (choice != 3) {
-<<<<<<< HEAD
 		cout << "1 - to see the books for a booking\n";
-=======
-		cout << "1 - to see the bookings for a book\n";
->>>>>>> 2f35ff9cdb69ca68e7413f9e22b09456b17411b4
 		cout << "2 - to book or take a book\n";
 		cout << "3 - to quit\n";
 		cout << "Enter your answer: ";
@@ -179,12 +164,9 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 				if (number == 2) {
 					takingTheBook(DB, bookBooker, bookNumber - 1, chosen);
 				}
-<<<<<<< HEAD
 			}
 			else {
 				return;
-=======
->>>>>>> 2f35ff9cdb69ca68e7413f9e22b09456b17411b4
 			}
 		}
 		else
