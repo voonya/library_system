@@ -5,14 +5,21 @@ void User::show_book(BookDatabase* DB) {
 }
 
 void User::show_info() {
-	ClientProfileInterface menu;
-	menu.show_info(*client);
+	ClientDatabaseOutputter menu(DB_C);
+	menu.output_client(*client);
 }
-void User::booking_menu(BookDatabase DB, BookBooker booker) {
+void User::booking_menu() {
 	BookingUserMenu menu;
+	BookBooker booker;
 	menu.showBookingsMenuUser(DB, booker, client);
 }
-void User::start_menu(BookDatabase DB) {
+void User::show_clients() {
+	ClientCatalogueUI client_ui(DB_C);
+	client_ui.output_menu();
+}
+void User::start_menu(BookDatabase* DB_B, ClientDatabase* DB_Cl) {
+	DB = DB_B;
+	DB_C = DB_Cl;
 	bool running = true;
 	while (running)
 	{
@@ -32,13 +39,12 @@ void User::start_menu(BookDatabase DB) {
 		}
 		case 2:
 		{
-			show_book(&DB);
+			show_book(DB);
 			break;
 		}
 		case 3:
 		{
-			BookBooker booker;
-			booking_menu(DB, booker);
+			booking_menu();
 			break;
 			/*
 			show_book(DB_B);

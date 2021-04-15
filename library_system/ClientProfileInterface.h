@@ -11,5 +11,6 @@ class ClientProfileInterface : protected ClientProfileEditor
 public:
 	void start_menu(vector<Client>* DB);
 	void show_info(Client client);
+	friend class User;
 };
 
