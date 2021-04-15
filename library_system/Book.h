@@ -16,6 +16,7 @@ class Book {
 public: 
 	Book(int ID, string t, string auth, int y, int p, string addInfo, queue< Booking > _queue);
 	int getId();
+	bool operator==(Book book);
 	string getTitle();
 	void setTitle(string newTitle);
 	string getAuthor();

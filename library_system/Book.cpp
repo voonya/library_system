@@ -69,6 +69,11 @@ string Book::getBookInfo()
 	return str;
 }
 
+bool Book::operator==(Book book)
+{
+	return book.getId() == id;
+}
+
 string Book::getAllBookInfo()
 {
 	string str = "Title: " + title + "\nAuthor: " + author + "\nYear: " + to_string(year) + "\nNumber pages: " + to_string(pages) +

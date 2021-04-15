@@ -5,7 +5,7 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 {
 	int number = 0;
 	while (number != 5) {
-		cout << "It's books propcessing menu\n";
+		cout << "It's books processing menu\n";
 		cout << "1 - to view books enter number\n";
 		cout << "2 - to add new book enter number\n";
 		cout << "3 - to edit existing book enter number\n";
@@ -36,9 +36,8 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 		}
 		if (number == 3) {
 			int bookNumber;
-			cout << " Enter book number to edit it: ";
-			cin >> bookNumber;
-			if (bookNumber >= 1 && bookNumber <= DB.getAllBooks().size()) {
+			int result = request_book(bookNumber, DB);
+			if (result == 1) {
 				Book book = DB.getAllBooks()[bookNumber - 1];
 				string newTitle = book.getTitle(),
 					newAuthor = book.getAuthor(),
@@ -94,18 +93,11 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 				editBook(DB, bookNumber, newTitle, newAuthor, newYear, newPages, newAdditionalInfo);
 				cout << " The book successfully updated!! \n";
 			}
-			else {
-				cout << " Incorrect book number!! \n";
-			}
 		}
 		if (number == 4) {
 			int bookNumber;
-			cout << " Enter book number to remove it: ";
-			cin >> bookNumber;
-			if (bookNumber <= 0 || bookNumber > DB.getAllBooks().size()) {
-				cout << " Incorrect book number!! \n";
-			}
-			else {
+			int result = request_book(bookNumber, DB);
+			if (result == 1) {
 				removeBook(DB, bookNumber);
 				cout << " The book successfully removed!! \n";
 			}
@@ -119,9 +111,53 @@ void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 	}
 }
 
+// 1 - book found
+// 0 - not found
+// -1 - incorrect number
+int BooksProcessingMenu::request_book(int &number, BookDatabase& DB)
+{
+	cout << " Enter the title of the book: ";
+	string title;
+	cin.ignore();
+	getline(cin, title);
+	vector<Book> found = DB.findByTitle(title);
+	if (found.size() == 1)
+	{
+		number = DB.getBookNumber(found[0]) + 1;
+	}
+	else if (found.size() > 1)
+	{
+		cout << "There are several such books. Choose a number of the book you need" << endl;
+		showBooks(found);
+		cin >> number;
+		if (number < 1 || number > found.size())
+		{
+			cout << "Incorrect book number!" << endl;
+			return -1;
+		}
+		number = DB.getBookNumber(found[number - 1]) + 1;
+	}
+	else
+	{
+		cout << "Book not found!" << endl;
+		return 0;
+	}
+	return  1;
+}
+
 void BooksProcessingMenu::showBooks(BookDatabase& DB)
 {
 	vector< Book > books = DB.getAllBooks();
+	for (int i = 0; i < books.size(); i++) {
+		string info = books[i].getBookInfo();
+		cout << "------- " << i + 1 << " -------" << endl;
+		cout << info << endl;
+	}
+}
+
+void BooksProcessingMenu::showBooks(vector<Book> DB)
+{
+	vector< Book > books = DB;
 	for (int i = 0; i < books.size(); i++) {
 		string info = books[i].getBookInfo();
 		cout << "------- " << i + 1 << " -------" << endl;

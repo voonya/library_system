@@ -80,6 +80,24 @@ vector<Book> BookDatabase::findByAuthor(string author){
 	return response;
 }
 
+vector< Book > BookDatabase::findBooks(string title, string author)
+{
+	vector< Book > response;
+	for (int i = 0; i < books.size(); i++) {
+		if (books[i].getAuthor().find(author) != -1 && books[i].getTitle().find(title) != -1)
+			response.push_back(books[i]);
+	}
+	return response;
+}
+
+int BookDatabase::getBookNumber(Book book)
+{
+	for (int i = 0; i < books.size(); i++) {
+		if (books[i] == book)
+			return i;
+	}
+}
+
 vector<Book> BookDatabase::findByTitle(string title){
 	vector< Book > response;
 	for (int i = 0; i < books.size(); i++) {
@@ -103,19 +121,19 @@ vector<Book> BookDatabase::sortBooksByAuthor()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), authorComparator);
-	return books;
+	return new_books;
 }
 
 vector<Book> BookDatabase::sortBooksByTitle()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), titleComparator);
-	return books;
+	return new_books;
 }
 
 vector<Book> BookDatabase::sortBooksByYear()
 {
 	vector<Book> new_books = books;
 	sort(new_books.begin(), new_books.end(), yearComparator);
-	return books;
+	return new_books;
 }

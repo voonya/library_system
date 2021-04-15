@@ -1,5 +1,4 @@
 #include "LibrarianDatabase.h"
-
 #include <vector>
 #include <string>
 
