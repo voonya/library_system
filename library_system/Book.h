@@ -21,6 +21,7 @@ public:
 	void setTitle(string newTitle);
 	string getAuthor();
 	void setAuthor(string newAuthor);
+	void removeTopBooking();
 	int getYear();
 	void setYear(int newYear);
 	int getPages();

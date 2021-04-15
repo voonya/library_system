@@ -80,3 +80,9 @@ string Book::getAllBookInfo()
 		"\nAdditional info: " + additionalInfo;
 	return str;
 }
+
+void Book::removeTopBooking()
+{
+	if (!bookingQueue.empty())
+		bookingQueue.pop();
+}

@@ -67,6 +67,11 @@ void BookDatabase::bookTheBook(Book* book, Client* client){
 	book->addBookingElement(newBooking);
 }
 
+void BookDatabase::removeTopBooking(Book* book)
+{
+	book->removeTopBooking();
+}
+
 void BookDatabase::takeTheBook(Book* book, Client* client) {
 	client->debts.push_back(book->getBookInfo());
 }
