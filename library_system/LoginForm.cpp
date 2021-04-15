@@ -28,17 +28,15 @@ int LoginForm::getUserIndex(ClientDatabase& DB, bool& found)
 {
 	while (true)
 	{
-		string name, surname, password;
+		string login, password;
 		cin.ignore();
-		cout << " Enter name: ";
-		getline(cin, name);
-		cout << " Enter surname: ";
-		getline(cin, surname);
+		cout << " Enter login: ";
+		getline(cin, login);
 		cout << " Enter password: ";
 		getline(cin, password);
 		vector<Client> clients = *(DB.getAllClients());
 		for (int i = 0; i < clients.size(); i++) {
-			if (clients[i].name == name && clients[i].surname == surname && clients[i].password == password) {
+			if (clients[i].login == login && clients[i].password == password) {
 				found = true;
 				return i;
 			}
