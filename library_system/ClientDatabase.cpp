@@ -21,6 +21,11 @@ void ClientDatabase::fake_init()
 	addClientToDatabase(client3);
 }
 
+Client* ClientDatabase::getClientByIndex(int index)
+{
+	return &clients[index];
+}
+
 void ClientDatabase::addClientToDatabase(const Client& client) {
 	clients.push_back(client);
 }

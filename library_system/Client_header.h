@@ -44,4 +44,5 @@ public:
 	//friend Client* findClient(vector<Client>& DB, string name, string surname);
 	friend class BookDatabase;
 	friend class ClientProfileInterface;
+	friend class LoginForm;
 };

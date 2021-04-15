@@ -16,6 +16,7 @@ public:
 	void editLibrarian(Librarian* librarian, string newName, string newSurname, string newPhone);
 	vector< Librarian* > findByNameAndSurname(string name, string surname);
 	vector< Librarian >* getAllLibrarians();
+	Librarian* getLibrarianByIndex(int index);
 	vector< Librarian > sort_by_surname();
 	vector< Librarian > sort_by_name();
 };

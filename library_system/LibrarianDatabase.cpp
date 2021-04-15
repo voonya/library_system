@@ -72,6 +72,11 @@ vector<Librarian>* LibrarianDatabase::getAllLibrarians()
 	return &librarians;
 }
 
+Librarian* LibrarianDatabase::getLibrarianByIndex(int index)
+{
+	return &librarians[index];
+}
+
 vector< Librarian > LibrarianDatabase::sort_by_name()
 {
 	vector<Librarian> new_catalogue = *getAllLibrarians();
