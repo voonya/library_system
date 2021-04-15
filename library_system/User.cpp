@@ -17,6 +17,10 @@ void User::show_clients() {
 	ClientCatalogueUI client_ui(DB_C);
 	client_ui.output_menu();
 }
+void User::registration(ClientDatabase* DB_C) {
+	ClientRegestrationInterface menu;
+	menu.start_menu(DB_C);
+}
 void User::start_menu(BookDatabase* DB_B, ClientDatabase* DB_Cl) {
 	DB = DB_B;
 	DB_C = DB_Cl;
