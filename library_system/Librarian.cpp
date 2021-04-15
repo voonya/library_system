@@ -1,12 +1,20 @@
 #include "Librarian.h"
 #include <string>
+
+
+#include "BookCatalogueUI.h"
+#include "BookingUserMenu.h"
+#include "ClientCatalogueUI.h"
+#include "ClientRegestrationInterface.h"
 using namespace std;
 
-Librarian::Librarian(string name, string surname, string phone)
+Librarian::Librarian(string name, string surname, string phone, string login, string password)
 {
 	this->name = name;
 	this->surname = surname;
 	this->phone_number = phone;
+	this->login = login;
+	this->password = password;
 }
 
 string get_more_info(Librarian c) {

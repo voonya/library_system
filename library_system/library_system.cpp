@@ -66,7 +66,13 @@ int main()
 			// librarian
 			else
 			{
-
+				int librarianIndex = login.getLibrarianIndex(librarianDatabase, found);
+				if (!found)
+				{
+					continue;
+				}
+				Librarian* librarian = librarianDatabase.getLibrarianByIndex(librarianIndex);
+				librarian->start_menu(&DB_Clients, &book_database);
 			}
 		}
 	}

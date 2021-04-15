@@ -57,3 +57,37 @@ int LoginForm::getUserIndex(ClientDatabase& DB, bool& found)
 		}
 	}
 }
+
+int LoginForm::getLibrarianIndex(LibrarianDatabase librarian_database, bool& found)
+{
+	while (true)
+	{
+		string login, password;
+		cin.ignore();
+		cout << " Enter login: ";
+		getline(cin, login);
+		cout << " Enter password: ";
+		getline(cin, password);
+		vector<Librarian> librarians = *(librarian_database.getAllLibrarians());
+		for (int i = 0; i < librarians.size(); i++) {
+			if (librarians[i].login == login && librarians[i].password == password) {
+				found = true;
+				return i;
+			}
+		}
+		cout << "\n---------------------------------------------------------------------------------\n";
+		cout << " There is no librarians with this data in db\n";
+		cout << "\n---------------------------------------------------------------------------------\n";
+		cout << "\n Do you want to try again or change profile type (1/2): ";
+		int answer;
+		cin >> answer;
+		switch (answer)
+		{
+		case 1:
+			continue;
+		default:
+			found = false;
+			return -1;
+		}
+	}
+}
