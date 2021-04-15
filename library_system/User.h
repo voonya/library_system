@@ -16,6 +16,7 @@ class User
 	void show_info();
 	void booking_menu();
 	void show_clients();
+	void registration(ClientDatabase* DB_C);
 public:
 	User(Client* client) : client(client) {};
 	void start_menu(BookDatabase* DB, ClientDatabase* DB_C);

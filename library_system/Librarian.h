@@ -13,6 +13,8 @@ class Librarian
 	string name;
 	string surname;
 	string phone_number;
+	string address;
+	string login;
 	ClientDatabase* DB_C;
 	BookDatabase* DB;
 	void register_client();

@@ -6,13 +6,15 @@ string Date::get_date() {
 	return to_string(day) + "." + to_string(month) + "." + to_string(year);
 }
 
-Client::Client(string name, string surname, Date date, string phone, string address)
+Client::Client(string name, string surname, Date date, string phone, string address, string login, string password)
 {
 	this->name = name;
 	this->surname = surname;
 	this->date_of_birth = date;
 	this->phone_number = phone;
 	this->address = address;
+	this->login = login;
+	this->password = password;
 }
 
 string get_more_info(Client c) {
@@ -23,7 +25,8 @@ string get_more_info(Client c) {
 string get_main_info(Client c) {
 	string info = " Name: " + c.name + "\n Surname: " + c.surname ;
 	string date = "\n Date of birth: " + c.date_of_birth.get_date();
-	return info + date;
+	string log = "\n Login: " + c.login + "\ Password: " + c.password;
+	return info + date + log;
 }
 
 string get_debts_info(Client c) {

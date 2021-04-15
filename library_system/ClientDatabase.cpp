@@ -13,9 +13,9 @@ ClientDatabase::ClientDatabase(std::vector<Client> clients)
 
 void ClientDatabase::fake_init()
 {
-	Client client1("Vasya", "Pupkin", Date(3, 12, 2000), "+3809944343", "-");
-	Client client2("Lena", "Pupkina", Date(3, 12, 2000), "+3809942343", "-");
-	Client client3("Olya", "Hink", Date(8, 11, 2002), "+38099412343", "-");
+	Client client1("Vasya", "Pupkin", Date(3, 12, 2000), "+3809944343", "-","1234","qwerty");
+	Client client2("Lena", "Pupkina", Date(3, 12, 2000), "+3809942343", "-", "228", "322");
+	Client client3("Olya", "Hink", Date(8, 11, 2002), "+38099412343", "-", "olya", "aezakmi");
 	addClientToDatabase(client1);
 	addClientToDatabase(client2);
 	addClientToDatabase(client3);
