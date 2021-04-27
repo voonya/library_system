@@ -9,6 +9,7 @@ int LoginForm::askUserType()
 {
 	while (true)
 	{
+		system("cls");
 		cout << "Are you a client or a librarian (1 - client, 2 - librarian):" << endl;
 		int answer;
 		cin >> answer;
@@ -62,6 +63,7 @@ int LoginForm::getLibrarianIndex(LibrarianDatabase librarian_database, bool& fou
 {
 	while (true)
 	{
+		system("cls");
 		string login, password;
 		cin.ignore();
 		cout << " Enter login: ";

@@ -63,8 +63,10 @@ void ClientRegestrationInterface::start_menu(ClientDatabase* DB) {
 
 void ClientRegestrationInterface::work_loop(string& answer, ClientDatabase* DB) {
 	while (answer != "q") {
+		system("cls");
 		if (answer == "s") {
 			set_info();
+			system("cls");
 			cout << "\n---------------------------------------------------------------------------------\n";
 			cout << "\n Finally we got:\n";
 			cout << get_main_info(client.get_client()) << "\n" << get_more_info(client.get_client());
@@ -80,6 +82,7 @@ void ClientRegestrationInterface::work_loop(string& answer, ClientDatabase* DB) 
 					cout << "\n---------------------------------------------------------------------------------\n";
 				}
 				else {
+					system("cls");
 					cout << "\n Database already has a client with theese name, surname and phonenumber:\n";
 					cout << get_main_info((*(DB->getAllClients()))[index]) << get_more_info((*(DB->getAllClients()))[index]);
 					cout << "\n---------------------------------------------------------------------------------\n";

@@ -10,6 +10,7 @@ void ClientProfileInterface::start_menu(vector<Client>* DB) {
 	getline(cin, answer);
 	cout << "\n---------------------------------------------------------------------------------\n";
 	while (answer != "q") {
+		system("cls");
 		if (answer == "s") {
 			string name, surname, phonenumber;
 			cout << " Enter name: ";
@@ -19,19 +20,20 @@ void ClientProfileInterface::start_menu(vector<Client>* DB) {
 			cout << " Enter phonenumber: ";
 			getline(cin, phonenumber);
 			client = find_client(*DB, name, surname, phonenumber);
+			system("cls");
 			if (index_in_db != -1) {
-				cout << "\n---------------------------------------------------------------------------------\n";
-				show_info();
-				cout << "\n---------------------------------------------------------------------------------\n";
+				
 				change_menu(DB);
 				//show_info();
 				answer = "q";
 			}
 			else {
+				system("cls");
 				cout << "\n---------------------------------------------------------------------------------\n";
 				cout << " There is no client with theese data in db\n";
 				cout << "\n---------------------------------------------------------------------------------\n";
 			}
+			
 			cout << "\n Do you want to try again or change another client`s profile, enter 'q' if you dont want? (s/q): ";
 			getline(cin, answer);
 		}
@@ -46,6 +48,10 @@ void ClientProfileInterface::start_menu(vector<Client>* DB) {
 void ClientProfileInterface::change_menu(vector<Client>* DB) {
 	string answer = "";
 	while(answer!="q"){
+		system("cls");
+		cout << "\n---------------------------------------------------------------------------------\n";
+		show_info();
+		cout << "\n---------------------------------------------------------------------------------\n";
 		cout << " What you want to change: (1) name, (2) surname, (3) phonenumber, (4) date of bith,\n (5) address, (6) debts, (7) reservation or (8) history (or quit)?\n Enter (1/2/3/4/5/6/7/8/q): ";
 		 getline(cin, answer);
 		if (answer == "1") {
@@ -140,9 +146,9 @@ void ClientProfileInterface::change_menu(vector<Client>* DB) {
 		}
 		update_info(client, *DB);
 		cout << " The data has been successfully changed\n";
-		cout << "\n---------------------------------------------------------------------------------\n";
-		show_info();
-		cout << "\n---------------------------------------------------------------------------------\n";
+		//cout << "\n---------------------------------------------------------------------------------\n";
+		//show_info();
+		//cout << "\n---------------------------------------------------------------------------------\n";
 	}
 }
 
