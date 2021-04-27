@@ -3,16 +3,26 @@
 #include <iostream>
 
 
-void ClientRegestrationInterface::set_info() {
+void ClientRegestrationInterface::set_info(ClientDatabase* DB) {
 	string a;
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n Nice. To create a new client`s profile you need to input some info about client\n";
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << " Login: ";
 	getline(cin, a);
+	while (!(DB->checkLogin(a))) {
+		cout << " This login is taken\n Try again";
+		cout << " Login: ";
+		getline(cin, a);
+	}
 	client.set_login(a);
 	cout << " Password: ";
 	getline(cin, a);
+	while (!(DB->checkPass(a))) {
+		cout << " This password is taken\n Try again";
+		cout << " Password: ";
+		getline(cin, a);
+	}
 	client.set_password(a);
 	cout << " Name: ";
 	getline(cin, a);
@@ -65,7 +75,7 @@ void ClientRegestrationInterface::work_loop(string& answer, ClientDatabase* DB) 
 	while (answer != "q") {
 		system("cls");
 		if (answer == "s") {
-			set_info();
+			set_info(DB);
 			system("cls");
 			cout << "\n---------------------------------------------------------------------------------\n";
 			cout << "\n Finally we got:\n";

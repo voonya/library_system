@@ -131,9 +131,6 @@
     <ClInclude Include="ClientCatalogueUI.h">
       <Filter>ClientClasses</Filter>
     </ClInclude>
-    <ClInclude Include="ClientDatabase.h">
-      <Filter>ClientClasses</Filter>
-    </ClInclude>
     <ClInclude Include="ClientDatabaseOutputter.h">
       <Filter>ClientClasses</Filter>
     </ClInclude>
@@ -154,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="LoginForm.h">
       <Filter>Login</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientDatabase.h">
+      <Filter>Actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

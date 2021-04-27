@@ -98,5 +98,17 @@ vector< Client > ClientDatabase::sort_by_surname()
 	return new_catalogue;
 }
 
+bool ClientDatabase::checkLogin(string login) {
+	for (int i = 0; i < clients.size(); i++) {
+		if (clients[i].login.compare(login) == 0) return false;
+	}
+	return true;
+}
+bool ClientDatabase::checkPass(string password) {
+	for (int i = 0; i < clients.size(); i++) {
+		if (clients[i].password.compare(password) == 0) return false;
+	}
+	return true;
+}
 
 
