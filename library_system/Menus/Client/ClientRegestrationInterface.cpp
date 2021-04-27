@@ -61,6 +61,7 @@ void ClientRegestrationInterface::set_info(ClientDatabase* DB) {
 }
 
 void ClientRegestrationInterface::start_menu(ClientDatabase* DB) {
+	system("cls");
 	cout << "\n---------------------------------------------------------------------------------\n";
 	cout << "\n Hello! You are now in creating client menu.\n If you want to create new profile enter 's'\n If you want to quit enter 'q'\n ";
 	string answer;

@@ -27,6 +27,7 @@ void User::start_menu(BookDatabase* DB_B, ClientDatabase* DB_Cl) {
 	bool running = true;
 	while (running)
 	{
+		system("cls");
 		cout << "Choose a menu:" << endl <<
 			"1 - look your profile" << endl <<
 			"2 - look book catalogue" << endl <<
@@ -39,15 +40,18 @@ void User::start_menu(BookDatabase* DB_B, ClientDatabase* DB_Cl) {
 		case 1:
 		{
 			show_info();
+			system("pause");
 			break;
 		}
 		case 2:
 		{
+		
 			show_book(DB);
 			break;
 		}
 		case 3:
 		{
+			
 			booking_menu();
 			break;
 			/*

@@ -31,6 +31,7 @@ class Client {
 public:
 	Client(string name, string surname, Date date, string phone, string address,string login, string password);
 	Client() { date_of_birth = Date(1, 1, 2000); }
+	friend vector<string> get_info_table(Client c);
 	friend class ClientProfileCreator;
 	friend class ClientProfileEditor;
 	friend string get_main_info(Client c);
@@ -38,6 +39,7 @@ public:
 	friend string get_debts_info(Client c);
 	friend string get_reservation_info(Client c);
 	friend string get_history_info(Client c);
+	friend string get_name_sur(Client C);
 	friend class ClientDatabase;
 	friend bool sorting_func_name(Client a, Client b);
 	friend bool sorting_func_surname(Client a, Client b);
