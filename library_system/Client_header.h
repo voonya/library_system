@@ -31,6 +31,7 @@ class Client {
 public:
 	Client(string name, string surname, Date date, string phone, string address,string login, string password);
 	Client() { date_of_birth = Date(1, 1, 2000); }
+	friend vector<string> get_info_table(Client c);
 	friend class ClientProfileCreator;
 	friend class ClientProfileEditor;
 	friend string get_main_info(Client c);

@@ -31,8 +31,9 @@ string get_main_info(Client c) {
 string get_name_sur(Client c) {
 	return "\n Name: " + c.name + "\n Surname: " + c.surname;
 }
-
-
+vector<string> get_info_table(Client c) {
+	return { c.name, c.surname,c.date_of_birth.get_date(), c.address, c.login, c.password };
+}
 string get_debts_info(Client c) {
 	string str = "\n\t";
 	for (int i = 0; i < c.debts.size(); i++) {
