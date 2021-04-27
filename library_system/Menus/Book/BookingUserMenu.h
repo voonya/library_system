@@ -1,8 +1,8 @@
 #pragma once
-#include "Book.h"
-#include "BookDatabase.h"
-#include "ClientDatabase.h"
-#include "BookBooker.h"
+#include "../../Book/Book.h"
+#include "../../Databases/BookDatabase.h"
+#include "../../Databases/ClientDatabase.h"
+#include "../../Book/BookBooker.h"
 
 class BookingUserMenu {
 public:

@@ -1,6 +1,6 @@
 #pragma once
-#include "Client_header.h"
-#include "ClientProfileInterface.h"
+#include "../Client/Client_header.h"
+#include "../Menus/Client/ClientProfileInterface.h"
 #include <string>
 using namespace std;
 class Librarian

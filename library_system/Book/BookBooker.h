@@ -1,7 +1,7 @@
 #pragma once
 #include "Book.h"
-#include "BookDatabase.h"
-#include "Client_header.h"
+#include "../Databases/BookDatabase.h"
+#include "../Client/Client_header.h"
 
 class BookBooker {
 public:

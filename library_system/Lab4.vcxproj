@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{5C7FDE42-D3F9-4CA8-88BE-38E594020CC1}</ProjectGuid>
+    <ProjectGuid>{DB33B4F5-A3FD-401D-980D-2A1668361E1D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,7 +70,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -79,12 +79,12 @@
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -92,56 +92,56 @@
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Book.cpp" />
-    <ClCompile Include="BookCatalogueUI.cpp" />
-    <ClCompile Include="BookDatabase.cpp" />
-    <ClCompile Include="BookOutputter.cpp" />
-    <ClCompile Include="BookProcessing.cpp" />
-    <ClCompile Include="ClientCatalogueUI.cpp" />
-    <ClCompile Include="ClientDatabase.cpp" />
-    <ClCompile Include="ClientDatabaseOutputter.cpp" />
-    <ClCompile Include="Client_class.cpp" />
-    <ClCompile Include="ClientProfileEditor.cpp" />
-    <ClCompile Include="ClientRegestrationInterface.cpp" />
-    <ClCompile Include="Librarian.cpp" />
-    <ClCompile Include="LibrarianDatabase.cpp" />
+    <ClCompile Include="actors\Librarian.cpp" />
+    <ClCompile Include="actors\User.cpp" />
+    <ClCompile Include="book\Book.cpp" />
+    <ClCompile Include="book\BookBooker.cpp" />
+    <ClCompile Include="book\BookProcessing.cpp" />
+    <ClCompile Include="client\ClientProfileCreator.cpp" />
+    <ClCompile Include="client\ClientProfileEditor.cpp" />
+    <ClCompile Include="client\Client_class.cpp" />
+    <ClCompile Include="databases\BookDatabase.cpp" />
+    <ClCompile Include="databases\ClientDatabase.cpp" />
+    <ClCompile Include="databases\LibrarianDatabase.cpp" />
     <ClCompile Include="library_system.cpp" />
-    <ClCompile Include="ClientProfileInterface.cpp" />
-    <ClCompile Include="ClientProfileCreator.cpp" />
-    <ClCompile Include="BookingUserMenu.cpp" />
-    <ClCompile Include="BookBooker.cpp" />
-    <ClCompile Include="BooksProcessingMenu.cpp" />
-    <ClCompile Include="LoginForm.cpp" />
-    <ClCompile Include="User.cpp" />
+    <ClCompile Include="menus\book\BookCatalogueUI.cpp" />
+    <ClCompile Include="menus\book\BookingUserMenu.cpp" />
+    <ClCompile Include="menus\book\BookOutputter.cpp" />
+    <ClCompile Include="menus\book\BooksProcessingMenu.cpp" />
+    <ClCompile Include="menus\client\ClientCatalogueUI.cpp" />
+    <ClCompile Include="menus\client\ClientDatabaseOutputter.cpp" />
+    <ClCompile Include="menus\client\ClientProfileInterface.cpp" />
+    <ClCompile Include="menus\client\ClientRegestrationInterface.cpp" />
+    <ClCompile Include="menus\client\LoginForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Book.h" />
-    <ClInclude Include="BookBooker.h" />
-    <ClInclude Include="BookCatalogueUI.h" />
-    <ClInclude Include="BookDatabase.h" />
-    <ClInclude Include="Booking.h" />
-    <ClInclude Include="BookingUserMenu.h" />
-    <ClInclude Include="BookOutputter.h" />
-    <ClInclude Include="BookProcessing.h" />
-    <ClInclude Include="ClientCatalogueUI.h" />
-    <ClInclude Include="ClientDatabase.h" />
-    <ClInclude Include="ClientDatabaseOutputter.h" />
-    <ClInclude Include="Client_header.h" />
-    <ClInclude Include="ClientProfileEditor.h" />
-    <ClInclude Include="ClientRegestrationInterface.h" />
-    <ClInclude Include="ClientProfileInterface.h" />
-    <ClInclude Include="ClientProfileCreator.h" />
-    <ClInclude Include="BooksProcessingMenu.h" />
-    <ClInclude Include="Librarian.h" />
-    <ClInclude Include="LibrarianDatabase.h" />
-    <ClInclude Include="LoginForm.h" />
-    <ClInclude Include="User.h" />
+    <ClInclude Include="actors\Librarian.h" />
+    <ClInclude Include="actors\User.h" />
+    <ClInclude Include="book\Book.h" />
+    <ClInclude Include="book\BookBooker.h" />
+    <ClInclude Include="book\Booking.h" />
+    <ClInclude Include="book\BookProcessing.h" />
+    <ClInclude Include="client\ClientProfileCreator.h" />
+    <ClInclude Include="client\ClientProfileEditor.h" />
+    <ClInclude Include="client\Client_header.h" />
+    <ClInclude Include="databases\BookDatabase.h" />
+    <ClInclude Include="databases\ClientDatabase.h" />
+    <ClInclude Include="databases\LibrarianDatabase.h" />
+    <ClInclude Include="menus\book\BookCatalogueUI.h" />
+    <ClInclude Include="menus\book\BookingUserMenu.h" />
+    <ClInclude Include="menus\book\BookOutputter.h" />
+    <ClInclude Include="menus\book\BooksProcessingMenu.h" />
+    <ClInclude Include="menus\client\ClientCatalogueUI.h" />
+    <ClInclude Include="menus\client\ClientDatabaseOutputter.h" />
+    <ClInclude Include="menus\client\ClientProfileInterface.h" />
+    <ClInclude Include="menus\client\ClientRegestrationInterface.h" />
+    <ClInclude Include="menus\client\LoginForm.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

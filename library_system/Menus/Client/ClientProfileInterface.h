@@ -1,5 +1,5 @@
 #pragma once
-#include "ClientProfileEditor.h"
+#include "../../Client/ClientProfileEditor.h"
 
 class ClientProfileInterface : protected ClientProfileEditor
 {

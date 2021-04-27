@@ -1,8 +1,8 @@
 ﻿
-#include "Librarian.h"
-#include "LibrarianDatabase.h"
-#include "LoginForm.h"
-#include "User.h"
+#include "Actors/Librarian.h"
+#include "Databases/LibrarianDatabase.h"
+#include "Menus/Client/LoginForm.h"
+#include "Actors/User.h"
 
 int main()
 {

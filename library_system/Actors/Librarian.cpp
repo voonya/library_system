@@ -2,10 +2,10 @@
 #include <string>
 
 
-#include "BookCatalogueUI.h"
-#include "BookingUserMenu.h"
-#include "ClientCatalogueUI.h"
-#include "ClientRegestrationInterface.h"
+#include "../Menus/Book/BookCatalogueUI.h"
+#include "../Menus/Book/BookingUserMenu.h"
+#include "../Menus/Client/ClientCatalogueUI.h"
+#include "../Menus/Client/ClientRegestrationInterface.h"
 using namespace std;
 
 Librarian::Librarian(string name, string surname, string phone, string login, string password)

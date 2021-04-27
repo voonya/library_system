@@ -1,10 +1,10 @@
 #pragma once
-#include "ClientProfileInterface.h"
-#include "BookCatalogueUI.h"
-#include "BookingUserMenu.h"
-#include "ClientCatalogueUI.h"
-#include "ClientDatabaseOutputter.h"
-#include "ClientRegestrationInterface.h"
+#include "../Menus/Client/ClientProfileInterface.h"
+#include "../Menus/Book/BookCatalogueUI.h"
+#include "../Menus/Book/BookingUserMenu.h"
+#include "../Menus/Client/ClientCatalogueUI.h"
+#include "../Menus/Client/ClientDatabaseOutputter.h"
+#include "../Menus/Client/ClientRegestrationInterface.h"
 
 using namespace std;
 

@@ -1,5 +1,6 @@
 #pragma once
-#include "ClientProfileCreator.h"
+#include "../../Client/ClientProfileCreator.h"
+#include "../../Databases/ClientDatabase.h"
 class ClientRegestrationInterface
 {
 	ClientProfileCreator client;

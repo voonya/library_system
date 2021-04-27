@@ -1,7 +1,7 @@
 #pragma once
-#include "ClientDatabase.h"
-#include "Librarian.h"
-#include "LibrarianDatabase.h"
+#include "../../Databases/ClientDatabase.h"
+#include "../../Actors/Librarian.h"
+#include "../../Databases/LibrarianDatabase.h"
 
 class LoginForm
 {
