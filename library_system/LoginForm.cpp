@@ -29,6 +29,7 @@ int LoginForm::getUserIndex(ClientDatabase& DB, bool& found)
 {
 	while (true)
 	{
+		system("cls");
 		string login, password;
 		cin.ignore();
 		cout << " Enter login: ";
@@ -44,6 +45,8 @@ int LoginForm::getUserIndex(ClientDatabase& DB, bool& found)
 		}
 		cout << "\n---------------------------------------------------------------------------------\n";
 		cout << " There is no client with this data in db\n";
+		if (DB.checkLogin(login) && !DB.checkPass(password)) cout << " Incorrect login\n";
+		if (!DB.checkLogin(login) && DB.checkPass(password)) cout << " Incorrect password\n";
 		cout << "\n---------------------------------------------------------------------------------\n";
 		cout << "\n Do you want to try again or change profile type (1/2): ";
 		int answer;

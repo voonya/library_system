@@ -23,11 +23,15 @@ string get_more_info(Client c) {
 }
 
 string get_main_info(Client c) {
-	string info = " Name: " + c.name + "\n Surname: " + c.surname ;
+	string info = "\n Name: " + c.name + "\n Surname: " + c.surname ;
 	string date = "\n Date of birth: " + c.date_of_birth.get_date();
 	string log = "\n Login: " + c.login + "\ Password: " + c.password;
 	return info + date + log;
 }
+string get_name_sur(Client c) {
+	return "\n Name: " + c.name + "\n Surname: " + c.surname;
+}
+
 
 string get_debts_info(Client c) {
 	string str = "\n\t";
