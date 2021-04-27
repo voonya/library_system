@@ -6,7 +6,8 @@
 
 int main()
 {
-	
+	//client1("Vasya", "Pupkin", Date(3, 12, 2000), "+3809944343", "-", "1234", "qwerty")
+	//librarian2("Lia", "Mars", "+3809942343", "helloworld", "qwerty");
 	vector<Client> clientVector;
 	ClientDatabase DB_Clients(clientVector);
 	DB_Clients.fake_init();
@@ -44,6 +45,7 @@ int main()
 		bool found = false;
 		while (!found)
 		{
+			system("cls");
 			cout << "To log in - 1, to return and choose between registration and log in - 2" << endl;
 			int answer1;
 			cin >> answer1;

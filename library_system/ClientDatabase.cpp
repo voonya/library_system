@@ -16,9 +16,11 @@ void ClientDatabase::fake_init()
 	Client client1("Vasya", "Pupkin", Date(3, 12, 2000), "+3809944343", "-","1234","qwerty");
 	Client client2("Lena", "Pupkina", Date(3, 12, 2000), "+3809942343", "-", "228", "322");
 	Client client3("Olya", "Hink", Date(8, 11, 2002), "+38099412343", "-", "olya", "aezakmi");
+	Client client4("v", "v", Date(8, 11, 2002), "v", "-", "v", "v");
 	addClientToDatabase(client1);
 	addClientToDatabase(client2);
 	addClientToDatabase(client3);
+	addClientToDatabase(client4);
 }
 
 Client* ClientDatabase::getClientByIndex(int index)
@@ -96,5 +98,17 @@ vector< Client > ClientDatabase::sort_by_surname()
 	return new_catalogue;
 }
 
+bool ClientDatabase::checkLogin(string login) {
+	for (int i = 0; i < clients.size(); i++) {
+		if (clients[i].login.compare(login) == 0) return false;
+	}
+	return true;
+}
+bool ClientDatabase::checkPass(string password) {
+	for (int i = 0; i < clients.size(); i++) {
+		if (clients[i].password.compare(password) == 0) return false;
+	}
+	return true;
+}
 
 

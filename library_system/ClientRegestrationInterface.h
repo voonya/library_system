@@ -6,5 +6,5 @@ class ClientRegestrationInterface
 public:
 	void work_loop(string& answer, ClientDatabase* DB);
 	void start_menu(ClientDatabase* DB);
-	void set_info();
+	void set_info(ClientDatabase* DB);
 };

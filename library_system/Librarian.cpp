@@ -22,10 +22,12 @@ string get_more_info(Librarian c) {
 	return info;
 }
 void Librarian::register_client() {
+	system("cls");
 	ClientRegestrationInterface menu;
 	menu.start_menu(DB_C);
 }
 void Librarian::edit_client() {
+	system("cls");
 	ClientProfileInterface menu;
 	menu.start_menu(DB_C->getAllClients());
 }
@@ -48,6 +50,7 @@ void Librarian::start_menu(ClientDatabase* DB_Cl, BookDatabase* DB_B) {
 	bool running = true;
 	while (running)
 	{
+		system("cls");
 		cout << "Choose a menu:" << endl <<
 			"1 - register a client" << endl <<
 			"2 - edit a client profile" << endl <<
@@ -86,6 +89,10 @@ void Librarian::start_menu(ClientDatabase* DB_Cl, BookDatabase* DB_B) {
 		}
 		case 6:
 		{
+			running = false;
+			break;
+		}
+		default: {
 			running = false;
 			break;
 		}

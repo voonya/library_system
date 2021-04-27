@@ -13,135 +13,147 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Actors">
+      <UniqueIdentifier>{d68e5bba-b67f-4d57-aa25-20d2bf4398b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BookClasses">
+      <UniqueIdentifier>{8a1a4988-5c73-4959-b7e3-9a30be4a0afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClientClasses">
+      <UniqueIdentifier>{c3766176-7aef-462d-af8e-7f4b7981673b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login">
+      <UniqueIdentifier>{38aff81e-07fe-40ca-ac04-dd8109ad6bf4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Book.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BookCatalogueUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BookDatabase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BookOutputter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BookProcessing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Client_class.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="library_system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BookingUserMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BookBooker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientCatalogueUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientDatabase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientDatabaseOutputter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientProfileEditor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientRegestrationInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientProfileInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientProfileCreator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BooksProcessingMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Librarian.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LibrarianDatabase.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Actors</Filter>
     </ClCompile>
     <ClCompile Include="User.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Book.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BookBooker.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BookCatalogueUI.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BookDatabase.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BookingUserMenu.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BookOutputter.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BookProcessing.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BooksProcessingMenu.cpp">
+      <Filter>BookClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="LibrarianDatabase.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientDatabase.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Client_class.cpp">
+      <Filter>ClientClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCatalogueUI.cpp">
+      <Filter>ClientClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientDatabaseOutputter.cpp">
+      <Filter>ClientClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientProfileCreator.cpp">
+      <Filter>ClientClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientProfileEditor.cpp">
+      <Filter>ClientClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientProfileInterface.cpp">
+      <Filter>ClientClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientRegestrationInterface.cpp">
+      <Filter>ClientClasses</Filter>
     </ClCompile>
     <ClCompile Include="LoginForm.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Login</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Book.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BookBooker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BookCatalogueUI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BookDatabase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Booking.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BookingUserMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BookOutputter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BookProcessing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Client_header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientCatalogueUI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientDatabase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientDatabaseOutputter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientProfileEditor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientRegestrationInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientProfileInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientProfileCreator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BooksProcessingMenu.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="User.h">
+      <Filter>Actors</Filter>
     </ClInclude>
     <ClInclude Include="Librarian.h">
-      <Filter>Header Files</Filter>
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BookBooker.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BookCatalogueUI.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BookDatabase.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Booking.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BookingUserMenu.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BookOutputter.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BookProcessing.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BooksProcessingMenu.h">
+      <Filter>BookClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Client_header.h">
+      <Filter>ClientClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCatalogueUI.h">
+      <Filter>ClientClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientDatabaseOutputter.h">
+      <Filter>ClientClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientProfileCreator.h">
+      <Filter>ClientClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientProfileEditor.h">
+      <Filter>ClientClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientProfileInterface.h">
+      <Filter>ClientClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientRegestrationInterface.h">
+      <Filter>ClientClasses</Filter>
     </ClInclude>
     <ClInclude Include="LibrarianDatabase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>Header Files</Filter>
+      <Filter>Actors</Filter>
     </ClInclude>
     <ClInclude Include="LoginForm.h">
-      <Filter>Header Files</Filter>
+      <Filter>Login</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientDatabase.h">
+      <Filter>Actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
