@@ -18,6 +18,7 @@ ClientCatalogueUI::ClientCatalogueUI(ClientDatabase* database)
 // returns false, when the menu is quit
 bool ClientCatalogueUI::output_menu()
 {
+	system("cls");
 	cout << "Enter 1 to output the catalogue" << endl;
 	cout << "Enter 2 to output the catalogue processing form" << endl;
 	cout << "Enter 3 to quit this menu" << endl;
@@ -57,6 +58,7 @@ void ClientCatalogueUI::output_catalogue_processing_form()
 		ClientDatabaseOutputter outputter1(new ClientDatabase(sorted));
 		cout << "Catalogue sorted!" << endl;
 		outputter1.output_client_database();
+		system("pause");
 		break;
 	}
 	case 2:
@@ -65,6 +67,7 @@ void ClientCatalogueUI::output_catalogue_processing_form()
 		ClientDatabaseOutputter outputter2(new ClientDatabase(sorted));
 		cout << "Catalogue sorted!" << endl;
 		outputter2.output_client_database();
+		system("pause");
 		break;
 	}
 	default:

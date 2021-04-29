@@ -47,4 +47,6 @@ public:
 	friend class BookDatabase;
 	friend class ClientProfileInterface;
 	friend class LoginForm;
+	friend class BookingUserMenu;
+	friend class BooksProcessingMenu;
 };

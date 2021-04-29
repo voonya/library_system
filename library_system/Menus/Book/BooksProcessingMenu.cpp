@@ -1,10 +1,12 @@
 #include <iostream>
+#include <iomanip>
 #include "BooksProcessingMenu.h"
 
 void BooksProcessingMenu::startDialogMenu(BookDatabase& DB)
 {
 	int number = 0;
 	while (number != 5) {
+		system("cls");
 		cout << "It's books processing menu\n";
 		cout << "1 - to view books enter number\n";
 		cout << "2 - to add new book enter number\n";
@@ -145,23 +147,68 @@ int BooksProcessingMenu::request_book(int &number, BookDatabase& DB)
 	return  1;
 }
 
-void BooksProcessingMenu::showBooks(BookDatabase& DB)
+void BooksProcessingMenu::showBooks(vector<Book> books)
 {
-	vector< Book > books = DB.getAllBooks();
+	for (int i = 0; i < 127; i++)
+		cout << "-";
+	cout << endl;
+	cout << "| " << setw(8) << " N | " << setw(40) << "Title | ";
+	cout << setw(28) << "Author | ";
+	cout << setw(11) << "Year | ";
+	cout << setw(11) << "Pages | ";
+	cout << setw(28) << "Booking |\n";
+	for (int i = 0; i < 127; i++)
+		cout << "-";
+	cout << endl;
 	for (int i = 0; i < books.size(); i++) {
-		string info = books[i].getBookInfo();
-		cout << "------- " << i + 1 << " -------" << endl;
-		cout << info << endl;
+		vector< Booking > booking = books[i].getBookingQueue();
+		string bookingStr;
+		for (int i = 0; i < booking.size(); i++) {
+			bookingStr += booking[i].client->name + " / ";
+		}
+		if (bookingStr.length() == 0)
+			bookingStr = "-";
+		cout << "| " << setw(5) << i + 1 << " | " << setw(37) << books[i].getTitle() << " | ";
+		cout << setw(25) << books[i].getAuthor() << " | ";
+		cout << setw(8) << books[i].getYear() << " | ";
+		cout << setw(8) << books[i].getPages() << " | ";
+		cout << setw(25) << "--" << " | " << endl;
+		for (int i = 0; i < 127; i++)
+			cout << "-";
+		cout << endl;
 	}
 }
 
-void BooksProcessingMenu::showBooks(vector<Book> DB)
+void BooksProcessingMenu::showBooks(BookDatabase& DB)
 {
-	vector< Book > books = DB;
+	vector< Book > books = DB.getAllBooks();
+	for (int i = 0; i < 127; i++)
+		cout << "-";
+	cout << endl;
+	cout << "| " << setw(8) << " N | " << setw(40) << "Title | ";
+	cout << setw(28) << "Author | ";
+	cout << setw(11) << "Year | ";
+	cout << setw(11) << "Pages | ";
+	cout << setw(28) << "Booking |\n";
+	for (int i = 0; i < 127; i++)
+		cout << "-";
+	cout << endl;
 	for (int i = 0; i < books.size(); i++) {
-		string info = books[i].getBookInfo();
-		cout << "------- " << i + 1 << " -------" << endl;
-		cout << info << endl;
+		vector< Booking > booking = books[i].getBookingQueue();
+		string bookingStr;
+		for (int i = 0; i < booking.size(); i++) {
+			bookingStr += booking[i].client->name + " / ";
+		}
+		if (bookingStr.length() == 0)
+			bookingStr = "-";
+		cout << "| " << setw(5) << i + 1 << " | " << setw(37) << books[i].getTitle() << " | ";
+		cout << setw(25) << books[i].getAuthor() << " | ";
+		cout << setw(8) << books[i].getYear() << " | ";
+		cout << setw(8) << books[i].getPages() << " | ";
+		cout << setw(25) << "--" << " | " << endl;
+		for (int i = 0; i < 127; i++)
+			cout << "-";
+		cout << endl;
 	}
 }
 

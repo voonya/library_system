@@ -6,6 +6,7 @@
 
 class BookingUserMenu {
 public:
+	friend class Client;
 	void startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB);
 	void showBookingsMenuUser(BookDatabase* DB, BookBooker& bookBooker, Client* client);
 	void showBooks(BookDatabase& DB);

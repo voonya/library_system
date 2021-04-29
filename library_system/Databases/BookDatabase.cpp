@@ -34,7 +34,7 @@ void BookDatabase::fake_init()
 
 void BookDatabase::addBookToDatabase(string title, string author, int year, int pages, string additionalInfo){
 	BookDatabase::bookId++;
-	queue< Booking > bookingQueue;
+	vector< Booking > bookingQueue;
 	Book newBook(BookDatabase::bookId, title, author, year, pages, additionalInfo, bookingQueue);
 	books.push_back(newBook);
 }

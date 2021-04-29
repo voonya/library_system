@@ -32,6 +32,7 @@ book_catalogue_ui::book_catalogue_ui(BookDatabase* catalogue)
 
 bool book_catalogue_ui::output_menu()
 {
+	system("cls");
 	cout << "Enter 1 to output the catalogue" << endl;
 	cout << "Enter 2 to output the catalogue processing form" << endl;
 	cout << "Enter 3 to quit this menu" << endl;
@@ -41,6 +42,7 @@ bool book_catalogue_ui::output_menu()
 	{
 	case 1:
 		output_book_catalogue();
+		system("pause");
 		return output_menu();
 	case 2:
 		output_catalogue_processing_form();

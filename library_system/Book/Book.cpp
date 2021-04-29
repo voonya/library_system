@@ -1,7 +1,7 @@
 #include <queue>
 #include "Book.h"
 
-Book::Book(int ID, string t, string auth, int y, int p, string addInfo, queue< Booking > _queue) : id(ID), title(t), author(auth), year(y), pages(p), additionalInfo(addInfo), bookingQueue(_queue) {};
+Book::Book(int ID, string t, string auth, int y, int p, string addInfo, vector< Booking > _queue) : id(ID), title(t), author(auth), year(y), pages(p), additionalInfo(addInfo), bookingQueue(_queue) {};
 
 int Book::getId() {
 	return id;
@@ -48,12 +48,12 @@ void Book::setAdditionalInfo(string newAdditionalInfo) {
 	additionalInfo = newAdditionalInfo;
 }
 
-queue< Booking > Book::getBookingQueue() {
+vector< Booking > Book::getBookingQueue() {
 	return bookingQueue;
 }
 
 void Book::addBookingElement(Booking elem) {
-	bookingQueue.push(elem);
+	bookingQueue.push_back(elem);
 }
 
 
@@ -61,10 +61,8 @@ string Book::getBookInfo()
 {
 	string str = "\n Title: " + title + "\n Author: " + author + "\n Year: " + to_string(year) + "\n Number pages: " + to_string(pages);
 	str += "\n Booking: ";
-	queue< Booking > _queue = bookingQueue;
-	while (!_queue.empty()) {
-		str += "\n---------\n" + get_name_sur(*_queue.front().client) + "\n---------";
-		_queue.pop();
+	for (int i = 0; i < bookingQueue.size(); i++) {
+		str += "\n---------\n" + get_name_sur(*bookingQueue[i].client) + "\n---------";
 	}
 	return str;
 }
@@ -83,6 +81,6 @@ string Book::getAllBookInfo()
 
 void Book::removeTopBooking()
 {
-	if (!bookingQueue.empty())
-		bookingQueue.pop();
+	if (bookingQueue.size())
+		bookingQueue.erase(bookingQueue.end() - 1);
 }

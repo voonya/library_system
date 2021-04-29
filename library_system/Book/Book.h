@@ -12,9 +12,9 @@ class Book {
 	int year;
 	int pages;
 	string additionalInfo;
-	queue< Booking > bookingQueue;
+	vector< Booking > bookingQueue;
 public: 
-	Book(int ID, string t, string auth, int y, int p, string addInfo, queue< Booking > _queue);
+	Book(int ID, string t, string auth, int y, int p, string addInfo, vector< Booking > _queue);
 	int getId();
 	bool operator==(Book book);
 	string getTitle();
@@ -28,7 +28,7 @@ public:
 	void setPages(int newPages);
 	string getAdditionalInfo();
 	void setAdditionalInfo(string newAdditionalInfo);
-	queue< Booking > getBookingQueue();
+	vector< Booking > getBookingQueue();
 	void addBookingElement(Booking elem);
 	string getBookInfo();
 	string getAllBookInfo();

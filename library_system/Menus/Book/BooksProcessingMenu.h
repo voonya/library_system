@@ -10,4 +10,5 @@ public:
 	void editBook(BookDatabase& DB, int bookNumber, string newTitle, string newAuthor, int newYear, int newPages, string newAdditionalInfo);
 	void removeBook(BookDatabase& DB, int bookNumber);
 	int request_book(int& number, BookDatabase& DB);
+	friend class Client;
 };

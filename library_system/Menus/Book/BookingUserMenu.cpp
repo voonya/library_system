@@ -1,9 +1,11 @@
 #include <iostream>
+#include <iomanip>
 #include "BookingUserMenu.h"
 
 
 int chooseBook(int count) {
 	cout << " To choose some book enter book number(" << 1 << "..." << count << "): ";
+	cin.ignore();
 	int bookNumber = -1;
 	cin >> bookNumber;
 	while (bookNumber > count || bookNumber <= 0) {
@@ -28,6 +30,7 @@ vector<Client*> choose_client(ClientDatabase& clientDB)
 
 void BookingUserMenu::showBookingsMenuUser(BookDatabase* DB, BookBooker& bookBooker, Client* client)
 {
+	system("cls");
 	int choice = 0;
 	cout << "It's menu of booking books\n";
 	while (choice != 3) {
@@ -77,11 +80,13 @@ void BookingUserMenu::showBookingsMenuUser(BookDatabase* DB, BookBooker& bookBoo
 		{
 			return;
 		}
+		system("cls");
 	}
 }
 
 void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, ClientDatabase& cDB)
 {
+	system("cls");
 	int choice = 0;
 	cout << "It's menu of booking books\n";
 	while (choice != 3) {
@@ -160,9 +165,12 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 				if (number == 1) {
 					bookingTheBook(DB, bookBooker, bookNumber - 1, chosen);
 					cout << "You successfully booked the book!!!\n";
+					system("pause");
 				}
 				if (number == 2) {
 					takingTheBook(DB, bookBooker, bookNumber - 1, chosen);
+					cout << "You successfully taken the book!!!\n";
+					system("pause");
 				}
 			}
 			else {
@@ -173,36 +181,56 @@ void BookingUserMenu::startDialogMenu(BookDatabase& DB, BookBooker& bookBooker, 
 		{
 			return;
 		}
+		system("cls");
 	}
 }
 
 void BookingUserMenu::showBooks(BookDatabase& DB)
 {
 	vector< Book > books = DB.getAllBooks();
+	for (int i = 0; i < 127; i++)
+		cout << "-";
+	cout << endl;
+	cout << "| " << setw(8) << " N | " << setw(40) << "Title | ";
+	cout << setw(28) << "Author | ";
+	cout << setw(11) << "Year | ";
+	cout << setw(11) << "Pages | ";
+	cout << setw(28) << "Booking |\n";
+	for (int i = 0; i < 127; i++)
+		cout << "-";
+	cout << endl;
 	for (int i = 0; i < books.size(); i++) {
-		string info = books[i].getBookInfo();
-		cout << "------- " << i + 1 << " -------" << endl;
-		cout << info << endl;
+		vector< Booking > booking = books[i].getBookingQueue();
+		string bookingStr;
+		for (int i = 0; i < booking.size(); i++) {
+			bookingStr += booking[i].client->name + " / ";
+		}
+		if (bookingStr.length() == 0)
+			bookingStr = "-";
+		cout << "| " << setw(5) << i + 1 << " | " << setw(37) << books[i].getTitle() << " | ";
+		cout << setw(25) << books[i].getAuthor() << " | ";
+		cout << setw(8) << books[i].getYear() << " | ";
+		cout << setw(8) << books[i].getPages() << " | ";
+		cout << setw(25) << "--" << " | " << endl;
+		for (int i = 0; i < 127; i++)
+			cout << "-";
+		cout << endl;
 	}
-}
+} 
 
 void BookingUserMenu::showBookings(BookDatabase& DB)
 {
-	cout << "Select a book from list:";
+	cout << "Select a book from list:\n";
 	showBooks(DB);
 	int bookNumber = chooseBook(DB.getAllBooks().size());
 	cout << "Your choosen book is: " << bookNumber << endl;
 	cout << "The bookings for the book are:\n";
 	Book book = DB.getAllBooks()[bookNumber - 1];
-		auto booking_queue = book.getBookingQueue();
-		int number = 0;
-		while (!booking_queue.empty())
-		{
-			number++;
-			Booking booking = booking_queue.front();
-			booking_queue.pop();
-			cout << number << ": booked by\n " << get_main_info(*booking.client) << endl ;
-		}
+	auto booking_queue = book.getBookingQueue();
+	int number = 0;
+	for (int i = 0; i < booking_queue.size(); i++) {
+		cout << i + 1 << ": booked by\n " << get_main_info(*booking_queue[i].client) << endl ;
+	}
 }
 
 void BookingUserMenu::bookingTheBook(BookDatabase& DB, BookBooker& bookBooker, int bookNumber, Client* client)
